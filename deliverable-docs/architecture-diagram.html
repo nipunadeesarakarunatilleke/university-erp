@@ -38,19 +38,19 @@
     border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 700;
   }
 
-  /* ── Downward connectors ───────────────────────────────────── */
-  .connectors {
+  /* ── Downward connectors (nginx → services) ────────────────── */
+  .connectors-down {
     display: grid; grid-template-columns: repeat(6, 1fr);
-    height: 32px; margin: 0;
+    height: 32px;
   }
-  .connectors .line {
+  .connectors-down .line {
     display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
   }
-  .connectors .line::before {
+  .connectors-down .line::before {
     content: ''; width: 2px; height: 22px;
     background: linear-gradient(to bottom, #bbc6d8, #99aabb);
   }
-  .connectors .line::after {
+  .connectors-down .line::after {
     content: '▼'; font-size: 10px; color: #99aabb; line-height: 1;
   }
 
@@ -63,7 +63,6 @@
     transition: box-shadow .2s;
   }
   .svc-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.18); }
-
   .svc-card .svc-header {
     padding: 10px 8px; text-align: center; color: #fff;
     font-weight: 700; font-size: 13px; line-height: 1.3;
@@ -87,50 +86,28 @@
   .chip.rest-out  { background: #e8f0fe; color: #1a56db; }
 
   /* service accent colours */
-  .auth-bg        { background: #3b82f6; }
-  .student-bg     { background: #22c55e; }
-  .exam-bg        { background: #f97316; }
-  .result-bg      { background: #a855f7; }
-  .transcript-bg  { background: #14b8a6; }
-  .notification-bg{ background: #ef4444; }
+  .auth-bg         { background: #3b82f6; }
+  .student-bg      { background: #22c55e; }
+  .exam-bg         { background: #f97316; }
+  .result-bg       { background: #a855f7; }
+  .transcript-bg   { background: #14b8a6; }
+  .notification-bg { background: #ef4444; }
 
-  /* ── REST panel ────────────────────────────────────────────── */
-  .rest-panel {
-    background: #fff; border-radius: 10px; padding: 12px 16px;
-    border-left: 4px solid #3b82f6; box-shadow: 0 2px 8px rgba(0,0,0,.08);
-    display: flex; flex-direction: column; gap: 6px;
+  /* ── Downward connectors (services → MongoDB) ──────────────── */
+  .connectors-to-db {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    height: 32px;
   }
-  .rest-panel h3 { font-size: 12px; font-weight: 700; color: #3b82f6; margin-bottom: 2px; }
-  .rest-row { display: flex; align-items: center; gap: 8px; font-size: 11px; }
-  .rest-pill {
-    padding: 2px 9px; border-radius: 20px; font-weight: 600; white-space: nowrap; font-size: 11px;
+  .connectors-to-db .dbline {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
   }
-  .rest-arrow { color: #3b82f6; font-size: 15px; flex-shrink: 0; }
-  .rest-note  { color: #888; font-size: 10.5px; }
-
-  /* ── Kafka panel ───────────────────────────────────────────── */
-  .kafka-panel {
-    background: linear-gradient(135deg, #0f0e17, #1f1e33);
-    border-radius: 10px; padding: 16px 20px; color: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  .connectors-to-db .dbline::before {
+    content: ''; width: 2px; height: 22px;
+    background: linear-gradient(to bottom, #6ab868, #47a248);
   }
-  .kafka-panel h3 { font-size: 13px; font-weight: 700; margin-bottom: 12px; }
-  .kafka-panel h3 span { color: #fbbf24; }
-
-  .topics-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .topic-card {
-    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18);
-    border-radius: 10px; padding: 10px 18px; text-align: center; flex: 1; min-width: 180px;
+  .connectors-to-db .dbline::after {
+    content: '▼'; font-size: 10px; color: #47a248; line-height: 1;
   }
-  .topic-card .topic-name { font-size: 13px; font-weight: 700; color: #fbbf24; }
-  .topic-card .topic-from { font-size: 10px; color: #94a3b8; margin-top: 3px; }
-  .topic-card .topic-to   { font-size: 10px; color: #7dd3fc; margin-top: 1px; }
-
-  .kafka-note {
-    text-align: center; font-size: 10.5px; color: #94a3b8;
-    margin-top: 12px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 10px;
-  }
-  .kafka-note strong { color: #d1fae5; }
 
   /* ── MongoDB grid ──────────────────────────────────────────── */
   .mongo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
@@ -141,20 +118,92 @@
     transition: box-shadow .2s;
   }
   .mongo-card:hover { box-shadow: 0 4px 14px rgba(71,162,72,.3); }
-  .mongo-icon { font-size: 22px; display: block; margin-bottom: 3px; }
+  .mongo-icon    { font-size: 22px; display: block; margin-bottom: 3px; }
   .mongo-db-name { font-size: 11px; font-weight: 700; color: #2d7a30; }
   .mongo-svc     { font-size: 10px; color: #888; margin-top: 1px; }
 
-  /* ── Upward connector between Kafka & MongoDB ─────────────── */
-  .v-connectors {
-    display: grid; grid-template-columns: repeat(6, 1fr);
-    height: 28px;
+  /* ── REST panel ────────────────────────────────────────────── */
+  .rest-panel {
+    background: #fff; border-radius: 10px; padding: 12px 16px;
+    border-left: 4px solid #3b82f6; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    display: flex; flex-direction: column; gap: 6px;
   }
-  .v-connectors .vline {
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  .rest-panel h3 { font-size: 12px; font-weight: 700; color: #3b82f6; margin-bottom: 2px; }
+  .rest-row { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+  .rest-pill {
+    padding: 2px 9px; border-radius: 20px; font-weight: 600;
+    white-space: nowrap; font-size: 11px;
   }
-  .v-connectors .vline::before { content: '▲'; font-size: 10px; color: #99aabb; line-height: 1; }
-  .v-connectors .vline::after  { content: ''; width: 2px; height: 16px; background: #bbc6d8; }
+  .rest-arrow { color: #3b82f6; font-size: 15px; flex-shrink: 0; }
+  .rest-note  { color: #888; font-size: 10.5px; }
+
+  /* ── Kafka divider ─────────────────────────────────────────── */
+  .kafka-divider {
+    display: flex; align-items: center; gap: 12px; margin: 20px 0 10px;
+  }
+  .kafka-divider .dline { flex: 1; height: 1px; background: #c8d0dc; }
+  .kafka-divider .dlabel {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.2px; color: #8892a4; white-space: nowrap;
+  }
+
+  /* ── Kafka panel ───────────────────────────────────────────── */
+  .kafka-panel {
+    background: linear-gradient(135deg, #0f0e17, #1f1e33);
+    border-radius: 10px; padding: 16px 20px; color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  }
+  .kafka-panel .kheader {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  }
+  .kafka-panel .kheader h3 { font-size: 13px; font-weight: 700; }
+  .kafka-panel .kheader h3 span { color: #fbbf24; }
+  .kafka-panel .kheader .kbadge {
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+    border-radius: 6px; padding: 2px 8px; font-size: 10px; color: #cbd5e1;
+  }
+
+  /* event flow rows */
+  .event-flows { display: flex; flex-direction: column; gap: 10px; }
+  .event-row {
+    display: flex; align-items: center; gap: 0;
+    background: rgba(255,255,255,.04); border-radius: 8px; overflow: hidden;
+  }
+  .ef-producer {
+    padding: 10px 14px; font-size: 12px; font-weight: 700;
+    color: #fff; min-width: 160px; text-align: center;
+    border-right: 2px dashed rgba(255,255,255,.15);
+  }
+  .ef-arrow-block {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 6px 14px; gap: 2px; min-width: 200px;
+  }
+  .ef-topic {
+    font-size: 12px; font-weight: 700; color: #fbbf24;
+    background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.3);
+    border-radius: 20px; padding: 3px 12px;
+  }
+  .ef-arrow { font-size: 18px; color: #94a3b8; }
+  .ef-broker {
+    padding: 10px 14px; text-align: center;
+    border-left: 2px dashed rgba(255,255,255,.15);
+    border-right: 2px dashed rgba(255,255,255,.15);
+    min-width: 160px;
+  }
+  .ef-broker .broker-label { font-size: 11px; font-weight: 700; color: #e2e8f0; }
+  .ef-broker .broker-sub   { font-size: 10px; color: #64748b; margin-top: 2px; }
+  .ef-consumer {
+    padding: 10px 14px; font-size: 12px; font-weight: 700;
+    min-width: 160px; text-align: center;
+    border-left: 2px dashed rgba(255,255,255,.15);
+  }
+
+  .kafka-note {
+    margin-top: 14px; border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 10px; font-size: 10.5px; color: #94a3b8;
+    display: flex; gap: 24px; flex-wrap: wrap;
+  }
+  .kafka-note strong { color: #d1fae5; }
 
   /* ── Legend ────────────────────────────────────────────────── */
   .legend {
@@ -166,7 +215,6 @@
   .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #334; }
   .leg-dot  { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
 
-  /* ── Print ─────────────────────────────────────────────────── */
   @media print {
     body { background: #fff; padding: 12px; }
     .svc-card, .rest-panel, .mongo-card, .legend { box-shadow: none; border: 1px solid #ddd; }
@@ -176,48 +224,49 @@
 </head>
 <body>
 
-<!-- ── Page header ───────────────────────────────────── -->
+<!-- ── Page header ─────────────────────────────────────────────────── -->
 <div class="page-header">
   <h1>University ERP — Component Architecture Diagram</h1>
   <p>Advanced Software Engineering · University of Colombo School of Computing (UCSC) &nbsp;·&nbsp; Node.js · MongoDB · Apache Kafka · Docker</p>
 </div>
 
-<!-- ── Layer 1: Client + nginx ───────────────────────── -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- LAYER 1 — Client + nginx                                          -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
 <div class="layer-label">Client &amp; Reverse Proxy Layer</div>
 <div class="nginx-bar">
   <span>🌐</span>
   <span>Browser SPA &nbsp;(jQuery + Bootstrap 5)</span>
   <span class="badge">nginx :8080</span>
-  <span style="opacity:.7;font-size:12px;font-weight:400">All requests proxied to microservices via path prefix routing</span>
+  <span style="opacity:.7;font-size:12px;font-weight:400">All API requests proxied by path prefix to microservices</span>
 </div>
 
-<!-- ── Connectors down ────────────────────────────────── -->
-<div class="connectors">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
+<!-- connectors: nginx → services -->
+<div class="connectors-down">
+  <div class="line"></div><div class="line"></div><div class="line"></div>
+  <div class="line"></div><div class="line"></div><div class="line"></div>
 </div>
 
-<!-- ── Layer 2: Microservices ────────────────────────── -->
-<div class="layer-label">Microservices Layer — 6 independently deployable services, each owning its own database</div>
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- LAYER 2 — Microservices                                           -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="layer-label">Microservices Layer — 6 independently deployable services</div>
 <div class="services-grid">
 
   <!-- Auth -->
   <div class="svc-card">
-    <div class="svc-header auth-bg">Auth Service<small>:3007 / auth_db</small></div>
+    <div class="svc-header auth-bg">Auth Service<small>:3007</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
-      <span class="chip">bcrypt password hash</span>
+      <span class="chip">bcrypt (hash factor 12)</span>
       <div class="sec-lbl">Routes</div>
       <span class="chip">POST /auth/register</span>
       <span class="chip">POST /auth/login</span>
       <span class="chip">POST /auth/seed</span>
       <div class="sec-lbl">Models</div>
       <span class="chip">User.js</span>
-      <span class="chip">(roles: ADMIN · EXAM_DIV · HOD · LECTURER · STUDENT)</span>
+      <span class="chip">Roles: ADMIN · EXAM_DIVISION</span>
+      <span class="chip">HOD · LECTURER · STUDENT</span>
       <div class="sec-lbl">Issues</div>
       <span class="chip">JWT (24 h expiry)</span>
     </div>
@@ -225,7 +274,7 @@
 
   <!-- Student -->
   <div class="svc-card">
-    <div class="svc-header student-bg">Student Service<small>:3001 / students_db</small></div>
+    <div class="svc-header student-bg">Student Service<small>:3001</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
       <span class="chip">auth.js (JWT verify)</span>
@@ -235,20 +284,20 @@
       <div class="sec-lbl">Key Endpoints</div>
       <span class="chip">POST /students (+ bulk)</span>
       <span class="chip">POST /:id/photo (multer)</span>
-      <span class="chip">POST /:id/year-reg</span>
+      <span class="chip">POST /:id/year-registration</span>
       <span class="chip">PATCH /spec/:id/assign</span>
       <div class="sec-lbl">Models</div>
       <span class="chip">Student.js</span>
       <span class="chip">YearRegistration.js</span>
       <span class="chip">SpecializationApp.js</span>
       <div class="sec-lbl">Kafka</div>
-      <span class="chip producer">▶ Producer → student.created</span>
+      <span class="chip producer">▶ Publishes student.created</span>
     </div>
   </div>
 
   <!-- Exam -->
   <div class="svc-card">
-    <div class="svc-header exam-bg">Exam Service<small>:3003 / exams_db</small></div>
+    <div class="svc-header exam-bg">Exam Service<small>:3003</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
       <span class="chip">auth.js (JWT verify)</span>
@@ -265,13 +314,13 @@
       <div class="sec-lbl">Sync REST</div>
       <span class="chip rest-out">→ Student Svc (validate)</span>
       <div class="sec-lbl">Kafka</div>
-      <span class="chip producer">▶ Producer → exam.registered</span>
+      <span class="chip producer">▶ Publishes exam.registered</span>
     </div>
   </div>
 
   <!-- Result -->
   <div class="svc-card">
-    <div class="svc-header result-bg">Result Service<small>:3004 / results_db</small></div>
+    <div class="svc-header result-bg">Result Service<small>:3004</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
       <span class="chip">auth.js (JWT verify)</span>
@@ -285,13 +334,13 @@
       <span class="chip">Result.js</span>
       <span class="chip">GPA.js</span>
       <div class="sec-lbl">Kafka</div>
-      <span class="chip producer">▶ Producer → result.published</span>
+      <span class="chip producer">▶ Publishes result.published</span>
     </div>
   </div>
 
   <!-- Transcript -->
   <div class="svc-card">
-    <div class="svc-header transcript-bg">Transcript Service<small>:3005 / transcripts_db</small></div>
+    <div class="svc-header transcript-bg">Transcript Service<small>:3005</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
       <span class="chip">auth.js (JWT verify)</span>
@@ -310,7 +359,7 @@
 
   <!-- Notification -->
   <div class="svc-card">
-    <div class="svc-header notification-bg">Notification Svc<small>:3006 / notif_db</small></div>
+    <div class="svc-header notification-bg">Notification Svc<small>:3006</small></div>
     <div class="svc-body">
       <div class="sec-lbl">Middleware</div>
       <span class="chip">auth.js (JWT verify)</span>
@@ -321,78 +370,51 @@
       <span class="chip">GET /notifications/student/:id</span>
       <div class="sec-lbl">Models</div>
       <span class="chip">NotificationLog.js</span>
-      <span class="chip">(event, topic, recipientId, status)</span>
+      <span class="chip">(event · topic · recipientId · status)</span>
       <div class="sec-lbl">Kafka</div>
-      <span class="chip consumer">◀ Consumer (3 topics)</span>
+      <span class="chip consumer">◀ Consumes all 3 topics</span>
       <span class="chip" style="font-size:9.5px">retry on UNKNOWN_TOPIC</span>
     </div>
   </div>
 
-</div><!-- end services-grid -->
+</div><!-- /services-grid -->
 
-<!-- ── REST Communication panel ──────────────────────── -->
-<div class="layer-label" style="margin-top:16px">Synchronous Communication (REST / HTTP)</div>
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- Synchronous REST communication                                     -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="layer-label" style="margin-top:14px">Synchronous Communication (REST / HTTP)</div>
 <div class="rest-panel">
   <h3>🔗 Cross-Service Calls via axios</h3>
   <div class="rest-row">
     <span class="rest-pill" style="background:#fff3e0;color:#e65100">Exam Service</span>
     <span class="rest-arrow">⟶</span>
     <span class="rest-pill" style="background:#e8f5e9;color:#2e7d32">Student Service</span>
-    <span class="rest-note">GET /api/students/:id — verify student exists before creating an exam entry</span>
+    <span class="rest-note">GET /api/students/:id — verify student exists before creating exam entry</span>
   </div>
   <div class="rest-row">
     <span class="rest-pill" style="background:#e0f7fa;color:#006064">Transcript Service</span>
     <span class="rest-arrow">⟶</span>
     <span class="rest-pill" style="background:#e8f5e9;color:#2e7d32">Student Service</span>
-    <span class="rest-note">GET /api/students/:id — pull student profile for transcript</span>
+    <span class="rest-note">GET /api/students/:id — fetch student profile for transcript</span>
   </div>
   <div class="rest-row">
     <span class="rest-pill" style="background:#e0f7fa;color:#006064">Transcript Service</span>
     <span class="rest-arrow">⟶</span>
     <span class="rest-pill" style="background:#f3e5f5;color:#6a1b9a">Result Service</span>
-    <span class="rest-note">GET /api/results/student/:id — pull semester results &amp; GPA for transcript</span>
+    <span class="rest-note">GET /api/results/student/:id — fetch semester results &amp; GPA</span>
   </div>
 </div>
 
-<!-- ── Kafka panel ────────────────────────────────────── -->
-<div class="layer-label" style="margin-top:16px">Asynchronous Event Bus</div>
-<div class="kafka-panel">
-  <h3>⚡ Apache Kafka 3.7 — <span>KRaft Mode</span> (no Zookeeper) &nbsp;·&nbsp; Internal: :9092 &nbsp;·&nbsp; Controller: :9094 &nbsp;·&nbsp; auto.create.topics.enable=true</h3>
-  <div class="topics-row">
-    <div class="topic-card">
-      <div class="topic-name">student.created</div>
-      <div class="topic-from">▶ Producer: Student Service</div>
-      <div class="topic-to">◀ Consumer: Notification Service</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-name">exam.registered</div>
-      <div class="topic-from">▶ Producer: Exam Service</div>
-      <div class="topic-to">◀ Consumer: Notification Service</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-name">result.published</div>
-      <div class="topic-from">▶ Producer: Result Service</div>
-      <div class="topic-to">◀ Consumer: Notification Service</div>
-    </div>
-  </div>
-  <div class="kafka-note">
-    <strong>Fail-silent producers</strong> — services stay operational if Kafka is temporarily down &nbsp;·&nbsp;
-    <strong>Retry consumer</strong> — Notification Service retries subscription every 10 s on UNKNOWN_TOPIC_OR_PARTITION
-  </div>
+<!-- connectors: services → MongoDB -->
+<div class="connectors-to-db" style="margin-top:14px">
+  <div class="dbline"></div><div class="dbline"></div><div class="dbline"></div>
+  <div class="dbline"></div><div class="dbline"></div><div class="dbline"></div>
 </div>
 
-<!-- ── Connectors up ──────────────────────────────────── -->
-<div class="v-connectors" style="margin-top:4px">
-  <div class="vline"></div>
-  <div class="vline"></div>
-  <div class="vline"></div>
-  <div class="vline"></div>
-  <div class="vline"></div>
-  <div class="vline"></div>
-</div>
-
-<!-- ── MongoDB layer ──────────────────────────────────── -->
-<div class="layer-label">Data Layer — MongoDB 7 · Database-per-Service pattern · Shared cluster, isolated databases</div>
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- LAYER 3 — MongoDB (directly under services)                       -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="layer-label">Data Layer — MongoDB 7 · Database-per-Service · Each service owns and exclusively accesses its own database</div>
 <div class="mongo-grid">
   <div class="mongo-card">
     <span class="mongo-icon">🗄️</span>
@@ -426,7 +448,115 @@
   </div>
 </div>
 
-<!-- ── Legend ─────────────────────────────────────────── -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- LAYER 4 — Kafka (service-to-service async, separate from DB)      -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<div class="kafka-divider">
+  <div class="dline"></div>
+  <div class="dlabel">⚡ Asynchronous Event Bus — Kafka connects microservices, not databases</div>
+  <div class="dline"></div>
+</div>
+
+<div class="kafka-panel">
+  <div class="kheader">
+    <h3>Apache Kafka 3.7 — <span>KRaft Mode</span> (No Zookeeper)</h3>
+    <span class="kbadge">Internal Broker :9092</span>
+    <span class="kbadge">Controller :9094</span>
+    <span class="kbadge">auto.create.topics.enable = true</span>
+  </div>
+
+  <div class="event-flows">
+
+    <!-- student.created -->
+    <div class="event-row">
+      <div class="ef-producer" style="background:rgba(34,197,94,.15);border-left:3px solid #22c55e">
+        🟢 Student Service<br>
+        <span style="font-size:10px;font-weight:400;color:#86efac">:3001 · KafkaJS Producer</span>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span class="ef-topic">student.created</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-broker">
+        <div class="broker-label">⚡ Kafka Broker</div>
+        <div class="broker-sub">persists until consumed</div>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span style="font-size:10px;color:#7dd3fc">consumer group: notification-svc</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-consumer" style="background:rgba(239,68,68,.15);border-right:3px solid #ef4444">
+        🔴 Notification Service<br>
+        <span style="font-size:10px;font-weight:400;color:#fca5a5">:3006 · KafkaJS Consumer</span>
+      </div>
+    </div>
+
+    <!-- exam.registered -->
+    <div class="event-row">
+      <div class="ef-producer" style="background:rgba(249,115,22,.15);border-left:3px solid #f97316">
+        🟠 Exam Service<br>
+        <span style="font-size:10px;font-weight:400;color:#fdba74">:3003 · KafkaJS Producer</span>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span class="ef-topic">exam.registered</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-broker">
+        <div class="broker-label">⚡ Kafka Broker</div>
+        <div class="broker-sub">persists until consumed</div>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span style="font-size:10px;color:#7dd3fc">consumer group: notification-svc</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-consumer" style="background:rgba(239,68,68,.15);border-right:3px solid #ef4444">
+        🔴 Notification Service<br>
+        <span style="font-size:10px;font-weight:400;color:#fca5a5">:3006 · KafkaJS Consumer</span>
+      </div>
+    </div>
+
+    <!-- result.published -->
+    <div class="event-row">
+      <div class="ef-producer" style="background:rgba(168,85,247,.15);border-left:3px solid #a855f7">
+        🟣 Result Service<br>
+        <span style="font-size:10px;font-weight:400;color:#d8b4fe">:3004 · KafkaJS Producer</span>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span class="ef-topic">result.published</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-broker">
+        <div class="broker-label">⚡ Kafka Broker</div>
+        <div class="broker-sub">persists until consumed</div>
+      </div>
+      <div class="ef-arrow-block">
+        <span class="ef-arrow">───────────────→</span>
+        <span style="font-size:10px;color:#7dd3fc">consumer group: notification-svc</span>
+        <span class="ef-arrow">───────────────→</span>
+      </div>
+      <div class="ef-consumer" style="background:rgba(239,68,68,.15);border-right:3px solid #ef4444">
+        🔴 Notification Service<br>
+        <span style="font-size:10px;font-weight:400;color:#fca5a5">:3006 · KafkaJS Consumer</span>
+      </div>
+    </div>
+
+  </div><!-- /event-flows -->
+
+  <div class="kafka-note">
+    <span><strong>Fail-silent producers</strong> — services remain operational even if Kafka is temporarily unavailable; errors are caught and logged silently</span>
+    <span><strong>Retry consumer</strong> — Notification Service retries topic subscription every 10 s on UNKNOWN_TOPIC_OR_PARTITION until topics are created by the first producer</span>
+    <span><strong>Consumer writes to notif_db</strong> — each consumed event is persisted as a NotificationLog document in MongoDB</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- Legend                                                             -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
 <div class="legend">
   <strong>Legend:</strong>
   <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div> Auth Service</div>
@@ -437,7 +567,7 @@
   <div class="leg-item"><div class="leg-dot" style="background:#ef4444"></div> Notification Service</div>
   <div class="leg-item"><div class="leg-dot" style="background:#0a7d3e"></div> nginx (Reverse Proxy)</div>
   <div class="leg-item"><div class="leg-dot" style="background:#0f0e17;border:1px solid #555"></div> Apache Kafka (KRaft)</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#47a248"></div> MongoDB</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#47a248"></div> MongoDB (per-service DB)</div>
   <div class="leg-item"><div class="leg-dot" style="background:#fff8e1;border:1px solid #e6c900"></div> Kafka Producer</div>
   <div class="leg-item"><div class="leg-dot" style="background:#e3f6fb;border:1px solid #7ec8d8"></div> Kafka Consumer</div>
   <div class="leg-item"><div class="leg-dot" style="background:#e8f0fe;border:1px solid #4a90d9"></div> Sync REST call</div>
