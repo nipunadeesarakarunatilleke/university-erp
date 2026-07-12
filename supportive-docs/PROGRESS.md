@@ -10,15 +10,44 @@
 
 | ID | Deliverable | File | Status |
 |----|-------------|------|--------|
-| D1 | Microservice Architecture Design Document (incl. Database Strategy) | `Architecture Design Document.docx` | ✅ Done |
-| D2 | Service Identification Table | `Service Identification Table.docx` | ✅ Done |
-| D3 | Bounded Context Diagram | `Bounded Context Diagram.docx` + `Bounded Context Diagram.md` | ✅ Done |
-| D4 | API Endpoint Design | `API Endpoint Design.docx` | ✅ Done |
-| D5 | Service Communication Diagram | `Service Communication Diagram.docx` + `Service Communication Diagram.md` | ✅ Done |
+| D1 | Microservice Architecture Design Document (incl. Database Strategy) | `deliverable-docs/Architecture Design Document.docx` | ✅ Done |
+| D2 | Service Identification Table | `deliverable-docs/Service Identification Table.docx` | ✅ Done |
+| D3 | Bounded Context Diagram | `deliverable-docs/Bounded Context Diagram.docx` + `deliverable-docs/Bounded Context Diagram.md` | ✅ Done |
+| D4 | API Endpoint Design | `deliverable-docs/API Endpoint Design.docx` | ✅ Done |
+| D5 | Service Communication Diagram | `deliverable-docs/Service Communication Diagram.docx` + `deliverable-docs/Service Communication Diagram.md` | ✅ Done |
 | D6 | Database Strategy | Embedded in Architecture Design Document, Section 6 | ✅ Done |
 | D7 | Prototype (≥2 services) | `services/` + `docker-compose.yml` | ✅ Done |
-| D8 | Benefits & Risks | `Benefits and Risks.docx` | ✅ Done |
-| D9 | AI Usage Report | `AI Usage Report.docx` | ✅ Done |
+| D8 | Benefits & Risks | `deliverable-docs/Benefits and Risks.docx` | ✅ Done |
+| D9 | AI Usage Report | `deliverable-docs/AI Usage Report.docx` | ✅ Done |
+
+## Existing System Analysis
+
+Before implementation, the existing MIS at the Faculty of Agriculture, Rajarata University of Sri Lanka (`agrimis.rjt.ac.lk`) was analysed by reading four source files in `supportive-docs/Information about existing system/`:
+
+| File | Content |
+|------|---------|
+| `Part1.txt` | Video transcript — student management, profile view, batch view, exam registration dates |
+| `part2.txt` | Video transcript — year registration via CSV, profile photo upload, exam application workflow |
+| `part3.txt` | Video transcript — result upload per subject, GPA processing, transcript download |
+| `video673.txt` | 1h51m awareness session transcript — full MIS scope, student portal demo, semester registration |
+| `MIS Awareness Workshop for Students.pptx` | Presentation slides — MIS scope covering registration, exam management, results, specialization, transcripts |
+
+### Output — Gap Analysis Report
+
+After analysing all files, a formal gap analysis was produced: `supportive-docs/Gap Analysis Report.docx`
+
+- Compared 5 feature areas of the existing MIS against the new microservice ERP prototype
+- Identified **12 gaps** (G1–G12) across authentication, data models, workflows, and missing services
+- Assigned each gap a priority (HIGH / MEDIUM) and a phase (1 / 2 / 3)
+- Produced a 3-phase implementation roadmap with dependency ordering
+
+| Phase | Gaps | Theme |
+|-------|------|-------|
+| Phase 1 | G1, G2, G5, G12 | Core foundation — auth, data model, windows, role UI |
+| Phase 2 | G4, G6, G7, G8 | Core workflows — registration, approval, results, transcripts |
+| Phase 3 | G3, G9, G10, G11 | Enhancements — bulk import, specialization, photos, Kafka |
+
+---
 
 ## Gap Analysis — Phase 1 Implementation ✅
 
@@ -351,11 +380,53 @@ Each printed line is a message consumed from the Kafka broker.
 
 ---
 
+## Repository & Documentation
+
+### Document Organisation
+
+All project files were reorganised from the root into two clearly named folders:
+
+| Folder | Contents |
+|--------|----------|
+| `deliverable-docs/` | All 9 assignment deliverables (D1–D9) |
+| `supportive-docs/` | Gap Analysis Report, Individual Assignment Plan, Information about existing system, PROGRESS.md, architecture diagram PNG |
+
+Files moved using `git mv` so rename history is preserved in git log.
+
+### GitHub Repository
+
+Project pushed to GitHub: **https://github.com/nipunadeesarakarunatilleke/university-erp**
+
+- Initial commit: 77 files — all service source trees, Dockerfiles, package.json files, frontend, documents
+- `.env` (JWT secret) excluded via `.gitignore` — only `.env.example` committed
+- All `node_modules/` directories excluded
+- Second commit: document folder reorganisation (`deliverable-docs/` + `supportive-docs/`)
+- Third commit: comprehensive README.md
+
+### README.md
+
+A comprehensive `README.md` was written at the project root covering:
+- ASCII architecture diagram (8 containers, ports, REST + Kafka flows)
+- Services table with ports, databases, and responsibilities
+- Technology stack table with rationale for each choice
+- All 12 gaps (G1–G12) grouped by phase
+- Cross-service communication patterns (sync REST + async Kafka)
+- GPA formula and grade-to-points mapping
+- User roles and permissions matrix
+- 6-step getting started guide with curl commands
+- Demo users credentials table
+- Full project folder structure
+- Service health check one-liner
+- Gap analysis summary table
+
+---
+
 ## Additional Documents
 
 | Document | File | Description |
 |----------|------|-------------|
-| Gap Analysis Report | `Gap Analysis Report.docx` | Comparison of existing MIS (Rajarata University) vs new microservice ERP — 12 gaps identified with a 3-phase implementation roadmap |
+| Gap Analysis Report | `supportive-docs/Gap Analysis Report.docx` | Comparison of existing MIS (Rajarata University) vs new microservice ERP — 12 gaps identified with a 3-phase implementation roadmap |
+| README | `README.md` | Comprehensive project description for GitHub — architecture, setup, features, API reference |
 
 ---
 
@@ -519,11 +590,15 @@ curl -s -X POST http://localhost:3007/api/auth/login \
 All deliverables complete. ✅
 
 ### Pre-Submission Checklist
-- [ ] Fill in `[YOUR INPUT REQUIRED]` fields in `AI Usage Report.docx` (corrections, validation, reflection per entry)
-- [ ] Render `Bounded Context Diagram.md` in mermaid.live → export PNG → insert into `Bounded Context Diagram.docx`
-- [ ] Render `Service Communication Diagram.md` in mermaid.live → export PNG → insert into `Service Communication Diagram.docx`
-- [x] Run `docker compose up --build -d` and smoke-test end-to-end via `http://localhost:8080` — all 8 containers healthy ✅
-- [x] Kafka pipeline verified: student.created / exam.registered / result.published all flow to Notification Service ✅
+- [x] All 12 gaps implemented across 3 phases ✅
+- [x] All 8 containers running and healthy (`docker compose up --build -d`) ✅
+- [x] Kafka pipeline verified: student.created / exam.registered / result.published → Notification Service ✅
+- [x] Documents organised into `deliverable-docs/` and `supportive-docs/` ✅
+- [x] Project pushed to GitHub: https://github.com/nipunadeesarakarunatilleke/university-erp ✅
+- [x] Comprehensive README.md written and pushed ✅
+- [ ] Fill in `[YOUR INPUT REQUIRED]` fields in `deliverable-docs/AI Usage Report.docx`
+- [ ] Render `deliverable-docs/Bounded Context Diagram.md` in mermaid.live → export PNG → insert into `deliverable-docs/Bounded Context Diagram.docx`
+- [ ] Render `deliverable-docs/Service Communication Diagram.md` in mermaid.live → export PNG → insert into `deliverable-docs/Service Communication Diagram.docx`
 - [ ] Proofread all documents for consistent terminology
 - [ ] Assemble final submission package
 
