@@ -531,6 +531,14 @@ curl -s -X POST http://localhost:3007/api/auth/login \
 ## Documents Completed
 
 ### Architecture Design Document
+- **Q2 update (2026-07-13):** Removed four prototype-era stale sentences; updated to reflect all 6 services fully built and Kafka running:
+  - Para 108: "Note: The prototype implements Student Service and Exam Service only..." → all six services listed, Kafka 3.7 KRaft noted
+  - Para 110: "The prototype is scoped to two services..." → "All six services are fully implemented and deployed via Docker Compose..."
+  - Para 111: "Kafka is included in the design but not wired in the prototype — events are noted in code comments." → Kafka KRaft implementation described with 3 topics and Notification Service consumer
+  - Para 114: "only Student and Exam paths are active in the prototype." → all six service paths active
+- **Q3 update (2026-07-13):** Component architecture diagram assets created:
+  - `deliverable-docs/architecture-diagram.html` — self-contained HTML diagram (4 layers: NGINX → 6 services → MongoDB → Kafka event flows); Kafka shown as horizontal event-flow rows separate from MongoDB to clarify Kafka connects microservices, not databases
+  - `deliverable-docs/architecture-diagram.drawio` — mxGraph XML for draw.io (A3 landscape, 1654×1169), same 4-layer layout; open in draw.io desktop/web and export as PNG to insert into Architecture Design Document.docx
 - Executive summary
 - System context (3 user types: student, admin, automated)
 - Architectural principles (single responsibility, database-per-service, API-first, loose coupling)
@@ -561,6 +569,10 @@ curl -s -X POST http://localhost:3007/api/auth/login \
 - Per-endpoint detail: HTTP method, path, auth required, request body JSON schema, response JSON schema, status codes, notes
 - Highlights cross-service endpoints: `POST /api/exams/:id/entries` (502 on Student Service failure), `POST /api/transcripts/:studentId/generate` (502 on Result Service failure)
 - Section 10 is a full summary table of all 29 endpoints at a glance
+- **Q5 + Q6 update (2026-07-13):**
+  - 403 Forbidden row added to global status codes table (after 401)
+  - Section 1.3 Standard Error Response: standard `{ "error": "..." }` JSON format, 502 `detail` field pattern, 8-row error code reference table (400/401/403/404/409/502/500)
+  - Section 1.4 Role-Based Access Control: role definitions table (5 roles × 2 cols), endpoint restriction table (16 rows covering all write/management endpoints)
 
 ### Service Communication Diagram
 - Mermaid flowchart source in `Service Communication Diagram.md` (render at mermaid.live)
@@ -572,9 +584,10 @@ curl -s -X POST http://localhost:3007/api/auth/login \
 ### Benefits and Risks
 - 7 benefits: independent deployability, fault isolation, scalability, technology flexibility,
   focused codebases, async decoupling, team autonomy
-- 6 risks with mitigations: distributed complexity, data consistency, infrastructure overhead,
-  inter-service latency, debugging difficulty, security surface area
-- Summary table (10 dimensions, net verdict per dimension)
+- 7 risks with mitigations: distributed complexity, data consistency, infrastructure overhead,
+  inter-service latency, debugging difficulty, security surface area, API versioning / backward compatibility
+- Summary table (12 dimensions, net verdict per dimension)
+- **Q7 update (2026-07-13):** Added Risk 3.7 — API Versioning / Backward Compatibility; risk text explains consumer services breaking when producer changes API or event schema; mitigation table covers API versioning, Kafka schema versioning, Schema Registry, contract testing, additive-only changes; new row added to summary table
 
 ### AI Usage Report
 - 10 pre-filled log entries covering every AI task in this session (architecture analysis, document generation, prototype scaffolding)
@@ -582,6 +595,23 @@ curl -s -X POST http://localhost:3007/api/auth/login \
 - Blank template for any additional entries
 - Overall reflection prompts (5 guiding questions)
 - **Action required:** fill in all `[YOUR INPUT REQUIRED]` fields before submission
+
+---
+
+## Team Questions Review (2026-07-13)
+
+The team raised 7 questions in `supportive-docs/Team questions.docx`. All answers are documented in `supportive-docs/answers.md`. Document updates triggered by the questions:
+
+| Q | Question summary | Answer / Action |
+|---|-----------------|-----------------|
+| Q1 | Is Result Service path `GET /api/results/student/:studentId` correct? | Already correct — no change needed |
+| Q2 | Notification Service listed twice / contradiction in Architecture Design Doc | Fixed — 4 prototype-era stale sentences removed/updated in Architecture Design Document.docx |
+| Q3 | Add a component-level architecture diagram | Created `architecture-diagram.html` and `architecture-diagram.drawio`; Mermaid source also in answers.md |
+| Q5 | Certain endpoints should be role-restricted — document it | Section 1.4 RBAC added to API Endpoint Design.docx |
+| Q6 | Add a standard error response schema to the API doc | Section 1.3 Standard Error Response + 403 row added to API Endpoint Design.docx |
+| Q7 | Add API Versioning / Backward Compatibility to Risks | Risk 3.7 + mitigation table + summary table row added to Benefits and Risks.docx |
+
+All triggered document changes committed and pushed to GitHub on 2026-07-13.
 
 ---
 
@@ -596,6 +626,12 @@ All deliverables complete. ✅
 - [x] Documents organised into `deliverable-docs/` and `supportive-docs/` ✅
 - [x] Project pushed to GitHub: https://github.com/nipunadeesarakarunatilleke/university-erp ✅
 - [x] Comprehensive README.md written and pushed ✅
+- [x] Team questions answered (`supportive-docs/answers.md`) ✅
+- [x] Architecture Design Document updated (Q2 stale prototype sentences removed) ✅
+- [x] API Endpoint Design updated (Q5 RBAC section + Q6 error schema + 403 row) ✅
+- [x] Benefits and Risks updated (Q7 Risk 3.7 API versioning) ✅
+- [x] Architecture diagram assets created (`architecture-diagram.html`, `architecture-diagram.drawio`) ✅
+- [ ] Export `architecture-diagram.drawio` as PNG → insert into `deliverable-docs/Architecture Design Document.docx`
 - [ ] Fill in `[YOUR INPUT REQUIRED]` fields in `deliverable-docs/AI Usage Report.docx`
 - [ ] Render `deliverable-docs/Bounded Context Diagram.md` in mermaid.live → export PNG → insert into `deliverable-docs/Bounded Context Diagram.docx`
 - [ ] Render `deliverable-docs/Service Communication Diagram.md` in mermaid.live → export PNG → insert into `deliverable-docs/Service Communication Diagram.docx`
