@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University ERP — Component Architecture Diagram</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef1f6;
+    padding: 28px;
+    color: #1a1a2e;
+    min-width: 1100px;
+  }
+
+  /* ── Page header ───────────────────────────────────────────── */
+  .page-header { text-align: center; margin-bottom: 28px; }
+  .page-header h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #1a1a2e; }
+  .page-header p  { font-size: 13px; color: #667; margin-top: 4px; }
+
+  /* ── Layer labels ──────────────────────────────────────────── */
+  .layer-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.2px; color: #8892a4; margin-bottom: 6px; margin-top: 16px;
+  }
+
+  /* ── nginx / browser bar ───────────────────────────────────── */
+  .nginx-bar {
+    background: linear-gradient(135deg, #0a7d3e, #0f9e4e);
+    color: #fff; border-radius: 10px; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    box-shadow: 0 3px 12px rgba(10,125,62,.35); font-size: 14px; font-weight: 600;
+  }
+  .nginx-bar .badge {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 700;
+  }
+
+  /* ── Downward connectors ───────────────────────────────────── */
+  .connectors {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    height: 32px; margin: 0;
+  }
+  .connectors .line {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  }
+  .connectors .line::before {
+    content: ''; width: 2px; height: 22px;
+    background: linear-gradient(to bottom, #bbc6d8, #99aabb);
+  }
+  .connectors .line::after {
+    content: '▼'; font-size: 10px; color: #99aabb; line-height: 1;
+  }
+
+  /* ── Service cards grid ────────────────────────────────────── */
+  .services-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+
+  .svc-card {
+    background: #fff; border-radius: 10px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.10);
+    transition: box-shadow .2s;
+  }
+  .svc-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+
+  .svc-card .svc-header {
+    padding: 10px 8px; text-align: center; color: #fff;
+    font-weight: 700; font-size: 13px; line-height: 1.3;
+  }
+  .svc-card .svc-header small {
+    display: block; font-size: 11px; font-weight: 400; opacity: .85; margin-top: 1px;
+  }
+  .svc-card .svc-body { padding: 8px 8px 10px; font-size: 10.5px; }
+
+  .sec-lbl {
+    font-size: 9.5px; font-weight: 700; text-transform: uppercase; color: #aab;
+    letter-spacing: .8px; margin-top: 7px; margin-bottom: 3px;
+  }
+  .chip {
+    background: #f0f3f8; border-radius: 4px; padding: 2px 6px;
+    margin-bottom: 2px; font-size: 10px; color: #334; display: block;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .chip.producer { background: #fff8e1; color: #7a5800; }
+  .chip.consumer { background: #e3f6fb; color: #0a5566; }
+  .chip.rest-out  { background: #e8f0fe; color: #1a56db; }
+
+  /* service accent colours */
+  .auth-bg        { background: #3b82f6; }
+  .student-bg     { background: #22c55e; }
+  .exam-bg        { background: #f97316; }
+  .result-bg      { background: #a855f7; }
+  .transcript-bg  { background: #14b8a6; }
+  .notification-bg{ background: #ef4444; }
+
+  /* ── REST panel ────────────────────────────────────────────── */
+  .rest-panel {
+    background: #fff; border-radius: 10px; padding: 12px 16px;
+    border-left: 4px solid #3b82f6; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .rest-panel h3 { font-size: 12px; font-weight: 700; color: #3b82f6; margin-bottom: 2px; }
+  .rest-row { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+  .rest-pill {
+    padding: 2px 9px; border-radius: 20px; font-weight: 600; white-space: nowrap; font-size: 11px;
+  }
+  .rest-arrow { color: #3b82f6; font-size: 15px; flex-shrink: 0; }
+  .rest-note  { color: #888; font-size: 10.5px; }
+
+  /* ── Kafka panel ───────────────────────────────────────────── */
+  .kafka-panel {
+    background: linear-gradient(135deg, #0f0e17, #1f1e33);
+    border-radius: 10px; padding: 16px 20px; color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+  }
+  .kafka-panel h3 { font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+  .kafka-panel h3 span { color: #fbbf24; }
+
+  .topics-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .topic-card {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 10px; padding: 10px 18px; text-align: center; flex: 1; min-width: 180px;
+  }
+  .topic-card .topic-name { font-size: 13px; font-weight: 700; color: #fbbf24; }
+  .topic-card .topic-from { font-size: 10px; color: #94a3b8; margin-top: 3px; }
+  .topic-card .topic-to   { font-size: 10px; color: #7dd3fc; margin-top: 1px; }
+
+  .kafka-note {
+    text-align: center; font-size: 10.5px; color: #94a3b8;
+    margin-top: 12px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 10px;
+  }
+  .kafka-note strong { color: #d1fae5; }
+
+  /* ── MongoDB grid ──────────────────────────────────────────── */
+  .mongo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .mongo-card {
+    background: #fff; border: 2px solid #47a248; border-radius: 10px;
+    padding: 10px 8px; text-align: center;
+    box-shadow: 0 2px 8px rgba(71,162,72,.15);
+    transition: box-shadow .2s;
+  }
+  .mongo-card:hover { box-shadow: 0 4px 14px rgba(71,162,72,.3); }
+  .mongo-icon { font-size: 22px; display: block; margin-bottom: 3px; }
+  .mongo-db-name { font-size: 11px; font-weight: 700; color: #2d7a30; }
+  .mongo-svc     { font-size: 10px; color: #888; margin-top: 1px; }
+
+  /* ── Upward connector between Kafka & MongoDB ─────────────── */
+  .v-connectors {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    height: 28px;
+  }
+  .v-connectors .vline {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  }
+  .v-connectors .vline::before { content: '▲'; font-size: 10px; color: #99aabb; line-height: 1; }
+  .v-connectors .vline::after  { content: ''; width: 2px; height: 16px; background: #bbc6d8; }
+
+  /* ── Legend ────────────────────────────────────────────────── */
+  .legend {
+    background: #fff; border-radius: 10px; padding: 12px 16px; margin-top: 20px;
+    display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  }
+  .legend strong { font-size: 11px; color: #667; }
+  .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #334; }
+  .leg-dot  { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ── Print ─────────────────────────────────────────────────── */
+  @media print {
+    body { background: #fff; padding: 12px; }
+    .svc-card, .rest-panel, .mongo-card, .legend { box-shadow: none; border: 1px solid #ddd; }
+    .kafka-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Page header ───────────────────────────────────── -->
+<div class="page-header">
+  <h1>University ERP — Component Architecture Diagram</h1>
+  <p>Advanced Software Engineering · University of Colombo School of Computing (UCSC) &nbsp;·&nbsp; Node.js · MongoDB · Apache Kafka · Docker</p>
+</div>
+
+<!-- ── Layer 1: Client + nginx ───────────────────────── -->
+<div class="layer-label">Client &amp; Reverse Proxy Layer</div>
+<div class="nginx-bar">
+  <span>🌐</span>
+  <span>Browser SPA &nbsp;(jQuery + Bootstrap 5)</span>
+  <span class="badge">nginx :8080</span>
+  <span style="opacity:.7;font-size:12px;font-weight:400">All requests proxied to microservices via path prefix routing</span>
+</div>
+
+<!-- ── Connectors down ────────────────────────────────── -->
+<div class="connectors">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+<!-- ── Layer 2: Microservices ────────────────────────── -->
+<div class="layer-label">Microservices Layer — 6 independently deployable services, each owning its own database</div>
+<div class="services-grid">
+
+  <!-- Auth -->
+  <div class="svc-card">
+    <div class="svc-header auth-bg">Auth Service<small>:3007 / auth_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">bcrypt password hash</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">POST /auth/register</span>
+      <span class="chip">POST /auth/login</span>
+      <span class="chip">POST /auth/seed</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">User.js</span>
+      <span class="chip">(roles: ADMIN · EXAM_DIV · HOD · LECTURER · STUDENT)</span>
+      <div class="sec-lbl">Issues</div>
+      <span class="chip">JWT (24 h expiry)</span>
+    </div>
+  </div>
+
+  <!-- Student -->
+  <div class="svc-card">
+    <div class="svc-header student-bg">Student Service<small>:3001 / students_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">auth.js (JWT verify)</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">students.js</span>
+      <span class="chip">specializations.js</span>
+      <div class="sec-lbl">Key Endpoints</div>
+      <span class="chip">POST /students (+ bulk)</span>
+      <span class="chip">POST /:id/photo (multer)</span>
+      <span class="chip">POST /:id/year-reg</span>
+      <span class="chip">PATCH /spec/:id/assign</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">Student.js</span>
+      <span class="chip">YearRegistration.js</span>
+      <span class="chip">SpecializationApp.js</span>
+      <div class="sec-lbl">Kafka</div>
+      <span class="chip producer">▶ Producer → student.created</span>
+    </div>
+  </div>
+
+  <!-- Exam -->
+  <div class="svc-card">
+    <div class="svc-header exam-bg">Exam Service<small>:3003 / exams_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">auth.js (JWT verify)</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">exams.js</span>
+      <div class="sec-lbl">Key Endpoints</div>
+      <span class="chip">POST /exams</span>
+      <span class="chip">PATCH /:id/schedule</span>
+      <span class="chip">POST /:id/entries</span>
+      <span class="chip">PATCH /:id/entries/:eid</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">Exam.js</span>
+      <span class="chip">Entry.js</span>
+      <div class="sec-lbl">Sync REST</div>
+      <span class="chip rest-out">→ Student Svc (validate)</span>
+      <div class="sec-lbl">Kafka</div>
+      <span class="chip producer">▶ Producer → exam.registered</span>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="svc-card">
+    <div class="svc-header result-bg">Result Service<small>:3004 / results_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">auth.js (JWT verify)</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">results.js</span>
+      <div class="sec-lbl">Key Endpoints</div>
+      <span class="chip">POST /results (+ bulk)</span>
+      <span class="chip">GET /student/:id</span>
+      <span class="chip">PATCH /gpa/:id/finalize</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">Result.js</span>
+      <span class="chip">GPA.js</span>
+      <div class="sec-lbl">Kafka</div>
+      <span class="chip producer">▶ Producer → result.published</span>
+    </div>
+  </div>
+
+  <!-- Transcript -->
+  <div class="svc-card">
+    <div class="svc-header transcript-bg">Transcript Service<small>:3005 / transcripts_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">auth.js (JWT verify)</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">transcripts.js</span>
+      <div class="sec-lbl">Key Endpoints</div>
+      <span class="chip">GET /transcripts/:id</span>
+      <span class="chip">GET /transcripts/:id/full</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">(aggregation — no own data)</span>
+      <div class="sec-lbl">Sync REST</div>
+      <span class="chip rest-out">→ Student Svc (profile)</span>
+      <span class="chip rest-out">→ Result Svc (grades)</span>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div class="svc-card">
+    <div class="svc-header notification-bg">Notification Svc<small>:3006 / notif_db</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Middleware</div>
+      <span class="chip">auth.js (JWT verify)</span>
+      <div class="sec-lbl">Routes</div>
+      <span class="chip">notifications.js</span>
+      <div class="sec-lbl">Key Endpoints</div>
+      <span class="chip">GET /notifications</span>
+      <span class="chip">GET /notifications/student/:id</span>
+      <div class="sec-lbl">Models</div>
+      <span class="chip">NotificationLog.js</span>
+      <span class="chip">(event, topic, recipientId, status)</span>
+      <div class="sec-lbl">Kafka</div>
+      <span class="chip consumer">◀ Consumer (3 topics)</span>
+      <span class="chip" style="font-size:9.5px">retry on UNKNOWN_TOPIC</span>
+    </div>
+  </div>
+
+</div><!-- end services-grid -->
+
+<!-- ── REST Communication panel ──────────────────────── -->
+<div class="layer-label" style="margin-top:16px">Synchronous Communication (REST / HTTP)</div>
+<div class="rest-panel">
+  <h3>🔗 Cross-Service Calls via axios</h3>
+  <div class="rest-row">
+    <span class="rest-pill" style="background:#fff3e0;color:#e65100">Exam Service</span>
+    <span class="rest-arrow">⟶</span>
+    <span class="rest-pill" style="background:#e8f5e9;color:#2e7d32">Student Service</span>
+    <span class="rest-note">GET /api/students/:id — verify student exists before creating an exam entry</span>
+  </div>
+  <div class="rest-row">
+    <span class="rest-pill" style="background:#e0f7fa;color:#006064">Transcript Service</span>
+    <span class="rest-arrow">⟶</span>
+    <span class="rest-pill" style="background:#e8f5e9;color:#2e7d32">Student Service</span>
+    <span class="rest-note">GET /api/students/:id — pull student profile for transcript</span>
+  </div>
+  <div class="rest-row">
+    <span class="rest-pill" style="background:#e0f7fa;color:#006064">Transcript Service</span>
+    <span class="rest-arrow">⟶</span>
+    <span class="rest-pill" style="background:#f3e5f5;color:#6a1b9a">Result Service</span>
+    <span class="rest-note">GET /api/results/student/:id — pull semester results &amp; GPA for transcript</span>
+  </div>
+</div>
+
+<!-- ── Kafka panel ────────────────────────────────────── -->
+<div class="layer-label" style="margin-top:16px">Asynchronous Event Bus</div>
+<div class="kafka-panel">
+  <h3>⚡ Apache Kafka 3.7 — <span>KRaft Mode</span> (no Zookeeper) &nbsp;·&nbsp; Internal: :9092 &nbsp;·&nbsp; Controller: :9094 &nbsp;·&nbsp; auto.create.topics.enable=true</h3>
+  <div class="topics-row">
+    <div class="topic-card">
+      <div class="topic-name">student.created</div>
+      <div class="topic-from">▶ Producer: Student Service</div>
+      <div class="topic-to">◀ Consumer: Notification Service</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-name">exam.registered</div>
+      <div class="topic-from">▶ Producer: Exam Service</div>
+      <div class="topic-to">◀ Consumer: Notification Service</div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-name">result.published</div>
+      <div class="topic-from">▶ Producer: Result Service</div>
+      <div class="topic-to">◀ Consumer: Notification Service</div>
+    </div>
+  </div>
+  <div class="kafka-note">
+    <strong>Fail-silent producers</strong> — services stay operational if Kafka is temporarily down &nbsp;·&nbsp;
+    <strong>Retry consumer</strong> — Notification Service retries subscription every 10 s on UNKNOWN_TOPIC_OR_PARTITION
+  </div>
+</div>
+
+<!-- ── Connectors up ──────────────────────────────────── -->
+<div class="v-connectors" style="margin-top:4px">
+  <div class="vline"></div>
+  <div class="vline"></div>
+  <div class="vline"></div>
+  <div class="vline"></div>
+  <div class="vline"></div>
+  <div class="vline"></div>
+</div>
+
+<!-- ── MongoDB layer ──────────────────────────────────── -->
+<div class="layer-label">Data Layer — MongoDB 7 · Database-per-Service pattern · Shared cluster, isolated databases</div>
+<div class="mongo-grid">
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">auth_db</div>
+    <div class="mongo-svc">Auth Service</div>
+  </div>
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">students_db</div>
+    <div class="mongo-svc">Student Service</div>
+  </div>
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">exams_db</div>
+    <div class="mongo-svc">Exam Service</div>
+  </div>
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">results_db</div>
+    <div class="mongo-svc">Result Service</div>
+  </div>
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">transcripts_db</div>
+    <div class="mongo-svc">Transcript Service</div>
+  </div>
+  <div class="mongo-card">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">notif_db</div>
+    <div class="mongo-svc">Notification Service</div>
+  </div>
+</div>
+
+<!-- ── Legend ─────────────────────────────────────────── -->
+<div class="legend">
+  <strong>Legend:</strong>
+  <div class="leg-item"><div class="leg-dot" style="background:#3b82f6"></div> Auth Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#22c55e"></div> Student Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div> Exam Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#a855f7"></div> Result Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#14b8a6"></div> Transcript Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#ef4444"></div> Notification Service</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#0a7d3e"></div> nginx (Reverse Proxy)</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#0f0e17;border:1px solid #555"></div> Apache Kafka (KRaft)</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#47a248"></div> MongoDB</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#fff8e1;border:1px solid #e6c900"></div> Kafka Producer</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#e3f6fb;border:1px solid #7ec8d8"></div> Kafka Consumer</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#e8f0fe;border:1px solid #4a90d9"></div> Sync REST call</div>
+</div>
+
+</body>
+</html>
