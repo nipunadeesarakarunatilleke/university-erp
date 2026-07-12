@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-13T00:00:00.000Z" agent="Claude Code" version="21.0.0" type="device">
+  <diagram name="University ERP Architecture" id="erp-arch-001">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="2" value="University ERP — Component Architecture Diagram"
+          style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#1a1a2e;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="15" width="1600" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="3" value="Advanced Software Engineering · UCSC · Node.js · MongoDB · Apache Kafka · Docker"
+          style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontColor=#667788;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="50" width="1600" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- LAYER 1: CLIENT & REVERSE PROXY                -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="4" value="CLIENT &amp; REVERSE PROXY LAYER"
+          style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontStyle=1;fontColor=#8892a4;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="78" width="400" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="5" value="&lt;b&gt;🌐  Browser SPA (jQuery + Bootstrap 5)&lt;/b&gt;  ·  nginx :8080  ·  All API requests proxied to microservices by URL path prefix"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0a7d3e;strokeColor=#065c2d;fontColor=#ffffff;fontSize=13;arcSize=4;align=center;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="96" width="1600" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- LAYER 2: MICROSERVICES                         -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="6" value="MICROSERVICES LAYER — 6 independently deployable services, each owning its own database"
+          style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontStyle=1;fontColor=#8892a4;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="162" width="900" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- AUTH SERVICE -->
+        <mxCell id="10" value="Auth Service · :3007"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=#1d4ed8;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;bcrypt (hash factor 12)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;POST /auth/register&lt;br&gt;POST /auth/login&lt;br&gt;POST /auth/seed&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;User.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Roles&lt;/b&gt;&lt;br&gt;ADMIN · EXAM_DIVISION&lt;br&gt;HOD · LECTURER · STUDENT&lt;br&gt;&lt;br&gt;&lt;b&gt;Issues&lt;/b&gt;&lt;br&gt;JWT (24h expiry)"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- STUDENT SERVICE -->
+        <mxCell id="12" value="Student Service · :3001"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;strokeColor=#16a34a;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="296" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;auth.js (JWT verify)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;students.js&lt;br&gt;specializations.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Key Endpoints&lt;/b&gt;&lt;br&gt;POST /students (+ bulk)&lt;br&gt;POST /:id/photo (multer)&lt;br&gt;POST /:id/year-registration&lt;br&gt;PATCH /spec/:id/assign&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;Student.js&lt;br&gt;YearRegistration.js&lt;br&gt;SpecializationApp.js&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#7a5800&quot;&gt;&lt;b&gt;▶ Kafka: Publishes student.created&lt;/b&gt;&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#22c55e;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="296" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- EXAM SERVICE -->
+        <mxCell id="14" value="Exam Service · :3003"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f97316;strokeColor=#c2410c;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="565" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;auth.js (JWT verify)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;exams.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Key Endpoints&lt;/b&gt;&lt;br&gt;POST /exams&lt;br&gt;PATCH /:id/schedule&lt;br&gt;POST /:id/entries&lt;br&gt;PATCH /:id/entries/:eid&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;Exam.js&lt;br&gt;Entry.js&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#1a56db&quot;&gt;REST → Student Svc (validate)&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#7a5800&quot;&gt;&lt;b&gt;▶ Kafka: Publishes exam.registered&lt;/b&gt;&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f97316;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="565" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- RESULT SERVICE -->
+        <mxCell id="16" value="Result Service · :3004"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#7e22ce;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="834" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;auth.js (JWT verify)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;results.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Key Endpoints&lt;/b&gt;&lt;br&gt;POST /results (+ bulk)&lt;br&gt;GET /student/:id&lt;br&gt;PATCH /gpa/:id/finalize&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;Result.js&lt;br&gt;GPA.js&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#7a5800&quot;&gt;&lt;b&gt;▶ Kafka: Publishes result.published&lt;/b&gt;&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a855f7;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="834" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- TRANSCRIPT SERVICE -->
+        <mxCell id="18" value="Transcript Service · :3005"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14b8a6;strokeColor=#0f766e;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="1103" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;auth.js (JWT verify)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;transcripts.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Key Endpoints&lt;/b&gt;&lt;br&gt;GET /transcripts/:id&lt;br&gt;GET /transcripts/:id/full&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;(aggregation — no own data)&lt;br&gt;&lt;br&gt;&lt;b&gt;Sync REST&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#1a56db&quot;&gt;→ Student Svc (profile)&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#1a56db&quot;&gt;→ Result Svc (grades)&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#14b8a6;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="1103" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- NOTIFICATION SERVICE -->
+        <mxCell id="20" value="Notification Service · :3006"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#b91c1c;fontColor=#ffffff;fontSize=13;fontStyle=1;arcSize=5;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="1372" y="180" width="255" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;auth.js (JWT verify)&lt;br&gt;&lt;br&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;notifications.js&lt;br&gt;&lt;br&gt;&lt;b&gt;Key Endpoints&lt;/b&gt;&lt;br&gt;GET /notifications&lt;br&gt;GET /notifications/student/:id&lt;br&gt;&lt;br&gt;&lt;b&gt;Models&lt;/b&gt;&lt;br&gt;NotificationLog.js&lt;br&gt;(event · topic · recipientId)&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#0a5566&quot;&gt;&lt;b&gt;◀ Kafka: Consumes all 3 topics&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#0a5566&quot;&gt;retry on UNKNOWN_TOPIC&lt;/font&gt;"
+          style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ef4444;fontSize=10;align=left;verticalAlign=top;spacingLeft=6;spacingTop=6;"
+          vertex="1" parent="1">
+          <mxGeometry x="1372" y="218" width="255" height="258" as="geometry" />
+        </mxCell>
+
+        <!-- ARROWS: nginx → Services -->
+        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.097;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.265;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.433;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="14" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.601;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="16" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.769;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="18" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b0bec5;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.937;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="5" target="20" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- LAYER 3: DATA LAYER (MongoDB)                  -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="30" value="DATA LAYER — MongoDB 7 · Database-per-Service pattern · No service accesses another service's database"
+          style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontStyle=1;fontColor=#8892a4;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="488" width="1000" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- MongoDB databases -->
+        <mxCell id="34" value="🗄️&lt;br&gt;&lt;b&gt;auth_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Auth Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="🗄️&lt;br&gt;&lt;b&gt;students_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Student Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="296" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="🗄️&lt;br&gt;&lt;b&gt;exams_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Exam Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="565" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="🗄️&lt;br&gt;&lt;b&gt;results_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Result Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="834" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="🗄️&lt;br&gt;&lt;b&gt;transcripts_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Transcript Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="1103" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="🗄️&lt;br&gt;&lt;b&gt;notif_db&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#888&quot;&gt;Notification Service&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;fontSize=11;fontColor=#2d7a30;arcSize=8;verticalAlign=middle;"
+          vertex="1" parent="1">
+          <mxGeometry x="1372" y="506" width="255" height="72" as="geometry" />
+        </mxCell>
+
+        <!-- ARROWS: Services → MongoDB (green, straight down) -->
+        <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="11" target="34" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="13" target="35" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="15" target="36" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="17" target="37" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="19" target="38" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#47a248;strokeWidth=2;endArrow=block;endFill=1;endSize=6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="21" target="39" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- REST COMMUNICATION PANEL                        -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="50" value="SYNCHRONOUS REST COMMUNICATION (HTTP / axios)"
+          style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=9;fontStyle=1;fontColor=#8892a4;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="592" width="700" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="&lt;b&gt;&lt;font color=&quot;#3b82f6&quot;&gt;🔗 Cross-Service HTTP Calls via axios&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;[Exam Service :3003]  ——  GET /api/students/:id  ——▶  [Student Service :3001]  ·  Validate student exists before creating exam entry&lt;br&gt;&lt;br&gt;[Transcript Service :3005]  ——  GET /api/students/:id  ——▶  [Student Service :3001]  ·  Fetch student profile for transcript&lt;br&gt;&lt;br&gt;[Transcript Service :3005]  ——  GET /api/results/student/:id  ——▶  [Result Service :3004]  ·  Fetch semester results and GPA for transcript"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=10;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;arcSize=3;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="610" width="1600" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- KAFKA DIVIDER                                   -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="60" value="⚡ ASYNCHRONOUS EVENT BUS — Kafka connects microservices to microservices, NOT to databases"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#c8d0dc;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#64748b;align=center;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="720" width="1600" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- LAYER 4: KAFKA EVENT BUS                       -->
+        <!-- ═══════════════════════════════════════════════ -->
+
+        <!-- Kafka outer container -->
+        <mxCell id="61" value=""
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f0e17;strokeColor=#2d2d44;strokeWidth=2;arcSize=4;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="748" width="1600" height="305" as="geometry" />
+        </mxCell>
+
+        <!-- Kafka header text -->
+        <mxCell id="62" value="&lt;b&gt;⚡ Apache Kafka 3.7 — KRaft Mode (No Zookeeper)&lt;/b&gt;  ·  Internal Broker :9092  ·  Controller :9094  ·  auto.create.topics.enable = true"
+          style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=12;fontColor=#ffffff;"
+          vertex="1" parent="1">
+          <mxGeometry x="37" y="756" width="1580" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- PRODUCER BOXES -->
+        <mxCell id="63" value="&lt;b&gt;&lt;font color=&quot;#86efac&quot;&gt;🟢 Student Service&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#94a3b8&quot;&gt;:3001 · KafkaJS Producer&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#052e16;strokeColor=#22c55e;strokeWidth=2;fontSize=11;fontColor=#ffffff;arcSize=8;"
+          vertex="1" parent="1">
+          <mxGeometry x="50" y="800" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="&lt;b&gt;&lt;font color=&quot;#fdba74&quot;&gt;🟠 Exam Service&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#94a3b8&quot;&gt;:3003 · KafkaJS Producer&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#431407;strokeColor=#f97316;strokeWidth=2;fontSize=11;fontColor=#ffffff;arcSize=8;"
+          vertex="1" parent="1">
+          <mxGeometry x="50" y="870" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="65" value="&lt;b&gt;&lt;font color=&quot;#d8b4fe&quot;&gt;🟣 Result Service&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#94a3b8&quot;&gt;:3004 · KafkaJS Producer&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e1065;strokeColor=#a855f7;strokeWidth=2;fontSize=11;fontColor=#ffffff;arcSize=8;"
+          vertex="1" parent="1">
+          <mxGeometry x="50" y="940" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- KAFKA BROKER BOX -->
+        <mxCell id="66" value="&lt;b&gt;&lt;font color=&quot;#fbbf24&quot;&gt;⚡ Kafka Broker&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#94a3b8&quot;&gt;:9092&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Persists messages&lt;br&gt;until consumed&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e1b4b;strokeColor=#fbbf24;strokeWidth=2;fontSize=11;fontColor=#ffffff;arcSize=8;"
+          vertex="1" parent="1">
+          <mxGeometry x="727" y="800" width="200" height="195" as="geometry" />
+        </mxCell>
+
+        <!-- NOTIFICATION CONSUMER BOX -->
+        <mxCell id="67" value="&lt;b&gt;&lt;font color=&quot;#fca5a5&quot;&gt;🔴 Notification Service&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#94a3b8&quot;&gt;:3006 · KafkaJS Consumer&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#475569&quot;&gt;Saves each event to notif_db&lt;/font&gt;"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#450a0a;strokeColor=#ef4444;strokeWidth=2;fontSize=11;fontColor=#ffffff;arcSize=8;"
+          vertex="1" parent="1">
+          <mxGeometry x="1380" y="845" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- KAFKA EVENT FLOW ARROWS -->
+        <!-- Student → Kafka Broker (student.created) -->
+        <mxCell id="70" value="&lt;b&gt;student.created&lt;/b&gt;"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22c55e;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontColor=#fbbf24;fontSize=10;fontStyle=1;align=center;labelBackgroundColor=#0f0e17;labelBorderColor=none;"
+          edge="1" source="63" target="66" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Exam → Kafka Broker (exam.registered) -->
+        <mxCell id="71" value="&lt;b&gt;exam.registered&lt;/b&gt;"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f97316;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#fbbf24;fontSize=10;fontStyle=1;align=center;labelBackgroundColor=#0f0e17;labelBorderColor=none;"
+          edge="1" source="64" target="66" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Result → Kafka Broker (result.published) -->
+        <mxCell id="72" value="&lt;b&gt;result.published&lt;/b&gt;"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#a855f7;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontColor=#fbbf24;fontSize=10;fontStyle=1;align=center;labelBackgroundColor=#0f0e17;labelBorderColor=none;"
+          edge="1" source="65" target="66" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Kafka Broker → Notification Consumer -->
+        <mxCell id="73" value="&lt;font color=&quot;#7dd3fc&quot;&gt;consumer group:&lt;br&gt;notification-svc&lt;/font&gt;"
+          style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ef4444;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#7dd3fc;fontSize=10;align=center;labelBackgroundColor=#0f0e17;labelBorderColor=none;"
+          edge="1" source="66" target="67" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Kafka notes -->
+        <mxCell id="74" value="&lt;font color=&quot;#d1fae5&quot;&gt;&lt;b&gt;Fail-silent producers&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#64748b&quot;&gt; — services stay operational if Kafka is down; publish errors are caught silently&lt;/font&gt;   ·   &lt;font color=&quot;#d1fae5&quot;&gt;&lt;b&gt;Retry consumer&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#64748b&quot;&gt; — retries topic subscription every 10s on UNKNOWN_TOPIC_OR_PARTITION   ·   Consumer writes each event as a NotificationLog document to notif_db&lt;/font&gt;"
+          style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;fontColor=#94a3b8;"
+          vertex="1" parent="1">
+          <mxGeometry x="37" y="1018" width="1580" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- LEGEND                                          -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <mxCell id="80" value="Legend:"
+          style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#667788;"
+          vertex="1" parent="1">
+          <mxGeometry x="27" y="1068" width="70" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="81" value="" style="rounded=1;fillColor=#3b82f6;strokeColor=#1d4ed8;" vertex="1" parent="1">
+          <mxGeometry x="102" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="82" value="Auth" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1068" width="45" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="83" value="" style="rounded=1;fillColor=#22c55e;strokeColor=#16a34a;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="84" value="Student" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="188" y="1068" width="55" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="85" value="" style="rounded=1;fillColor=#f97316;strokeColor=#c2410c;" vertex="1" parent="1">
+          <mxGeometry x="248" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="86" value="Exam" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="266" y="1068" width="45" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="87" value="" style="rounded=1;fillColor=#a855f7;strokeColor=#7e22ce;" vertex="1" parent="1">
+          <mxGeometry x="316" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="88" value="Result" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="334" y="1068" width="45" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="89" value="" style="rounded=1;fillColor=#14b8a6;strokeColor=#0f766e;" vertex="1" parent="1">
+          <mxGeometry x="384" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="90" value="Transcript" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="402" y="1068" width="65" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="91" value="" style="rounded=1;fillColor=#ef4444;strokeColor=#b91c1c;" vertex="1" parent="1">
+          <mxGeometry x="472" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="92" value="Notification" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1068" width="70" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="93" value="" style="rounded=1;fillColor=#0a7d3e;strokeColor=#065c2d;" vertex="1" parent="1">
+          <mxGeometry x="565" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="94" value="nginx (Reverse Proxy)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="583" y="1068" width="120" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="95" value="" style="rounded=1;fillColor=#0f0e17;strokeColor=#2d2d44;" vertex="1" parent="1">
+          <mxGeometry x="708" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="96" value="Apache Kafka (KRaft)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="726" y="1068" width="120" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="97" value="" style="rounded=1;fillColor=#f0fdf4;strokeColor=#47a248;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="851" y="1072" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="98" value="MongoDB (Database-per-Service)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="869" y="1068" width="180" height="22" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
