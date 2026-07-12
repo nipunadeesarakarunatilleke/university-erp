@@ -1,0 +1,237 @@
+Okay. Uh I have now uploaded the all the the files which I showed you earlier uh
+0:09
+which are first year first semester courses.
+0:13
+And uh now if I go to the that girls page uh profile page and look at the
+0:21
+exam results I have uploaded all these courses but
+0:27
+you can see there is a one subject agriculture and development
+0:34
+uh the same thing happiness on a true time it's a kind of a mistakes but what
+0:40
+I wanted to show if someone uh repeat the subjects
+0:48
+uh maybe in the same year or some other year that results could be uploaded but
+0:54
+if it is in the same year it will be replaced if it is in the previous year
+0:59
+it will not be replaced. So that is here mistakenly I put as the year as a
+1:05
+one it should be academic year but in a such a situation the the deleting the
+1:11
+results is not possible here since deleting the results isn't a critical
+1:16
+things that why we have not included a function it is administrator can backend
+1:22
+could delete this record but the need that facility
+1:28
+uh which we can include as in a feature to delete the uploaded results. Uh
+1:34
+that's that's possible and then but here is the total number of courses
+1:42
+uh sorry uh results are here. Now from the student now if I go to the student
+1:49
+uh here it's the the semester one exams you can see the student can also see the
+1:56
+the final result sheet. So these are the the results which are approved at the
+2:02
+exam board and after that only they are uploaded to the I um
+2:09
+u uh the MIS and that's why how they see the results. Then if I uh move here the
+2:19
+next thing now we were talking about the exam management and then resource
+2:24
+management. What we did now upload in the resource
+2:29
+and then process the GPA. the process GPA
+2:34
+uh where the people may select the the current academic year, the study year
+2:39
+one and then and if you click you will get the all the list of the students who
+2:46
+are in the current study year one where the results will be processed. So
+2:53
+probably you need an Excel file with all these results to finalize their GPA. The
+3:00
+easiest thing is to select uh all the students. So if you select
+3:05
+only the subset of the students also possible. Click this export to Excel
+3:09
+button and then save the file the uh the ro GPA file. And if you go here you will
+3:17
+see the ro GPA file and uh once you doubleclick you can open.
+3:28
+Yeah. So here you can see uh is the the detail result sheet.
+3:36
+Uh okay the detail result sheets as you can
+3:42
+see um it contains based on the uh the
+3:47
+course GPA course code. Now all the students
+3:54
+this is the uh I mean we were doing this girl Charunika and uh Charunika's
+4:02
+results which we uploaded you can see them all the results are here. So after
+4:08
+the subjects exam board uh the final result sheets are here and then is the
+4:16
+uh since this contains the all the courses of the
+4:24
+of the first year. Yeah. GPA is calculated not
+4:30
+semester wise the year wise. And here's the the calculated result GPA is a 2.61.
+4:39
+So since some of the things based on the course is done and then if we after the
+4:45
+exam board once you finalized what we have to do it we'll have to
+4:50
+upload the final GPA. To upload the final GPA the mechanism is what we call
+4:57
+upload the process GPA. People will have to go to this menu upload process GPA
+5:03
+and look at here only the registration number and GPA.
+5:08
+Uh that will result uploading the the GPA will be uh
+5:17
+taken into that. Now I am going to delete these columns.
+5:26
+I mean to create a file for that. Yes, registration number is there in not
+5:34
+index number and uh let's take it until the this one
+5:41
+and delete the resource. Okay. And uh let's I mean uh we'll
+5:50
+change the GPA 3 five and uh let's make it 2.9.
+5:59
+So exam board decided to change that one. We'll delete this column and most
+6:04
+probably we are only uploading now only two students and uh the on two students
+6:11
+we'll we'll delete the other students. So this is this resiso.
+6:16
+Okay. Now we have the registration number and GPA and uh we could save this
+6:23
+one and let's save it as a save as uh given a line. I mean the easiest one
+6:34
+where you see options if I click it.
+6:41
+Okay, we'll give it final GPU something like that. GPF
+6:47
+on the download file. Okay, fine. I'll close the file. I'll move to the uh
+6:54
+the file and there I'll select I'll go to the download directory. Put it there.
+7:00
+Final GPA and I select that one. Okay. and then
+7:07
+uh GPA processing year I'll have to select now this is the one with the we
+7:13
+I'm uploading the first year so select this thing and upload
+7:18
+confirm so file was uploaded so that is done now if we go back to the student
+7:27
+uh information view students and you remember the the uh charuna.
+7:37
+So here we put the GPA year 1 GPA 1.2.9 2.9 that is
+7:45
+shown here and if you click exam results it's shown here and academic profile GPA
+7:53
+still she is the first year student year two year three and the final GPA comes
+8:00
+and that's how it works the processing of the first year the similar way the
+8:08
+second year even the semester 2 exam results year two results
+8:14
+year three results and final GPA has to be done and then
+8:21
+um um that's that's the main thing. So the results management process GPA and
+8:29
+upload GPA those are the the main thing. So once it is done the next thing will
+8:34
+be semester transcript if there is a requirement to get. So here semester
+8:40
+wise trans so we'll click the first one. So academic year 2020
+8:45
+and uh if I click this one let's get the all the people who are here. So I'll
+8:51
+select only that girl and say download the transcript and then when I download
+8:57
+that one and here uh if I go down so okay here
+9:04
+comes the semester results of course now you can see the grade and this is what
+9:12
+the student will get. So usually S exam is the the person who can
+9:20
+download this one of the students and when the GP is finalized the
+9:26
+transcript could be downloaded. So similar way uh detail transcript final
+9:33
+uh final transcript uh also now let's say for example I'm selecting the batch
+9:40
+and then not no registration I just say all the students and I'll select that
+9:47
+girl Charunika and I'll print download the transcript yes save it
+9:54
+and go to the file okay transcript one you will see. Okay. So only the
+10:03
+semester one weights others are blank as you can see although the credits are
+10:08
+given. So the same things comes with respect to the other courses. For
+10:17
+example the detail transcript it's exactly the
+10:23
+same thing. It comes here. uh the people could click and download and you can
+10:29
+test. So now today I have demonstrated you the flow from how to upload the how
+10:36
+to apply the exam how to approve the application then generate the uh
+10:45
+generate their admission card and after approval and C could print and give
+10:52
+them. So when the exams are conducted uh results uploading results will be
+10:59
+uploaded after the exam board of each subjects by the S then the process GPA
+11:05
+could be taken the GPA exam uh board could be helped. So once the
+11:12
+GPA is finalized that the G exam board GPA could modify it and the process GPA
+11:19
+could be uploaded once it is done the semester transcript
+11:23
+uh can be generated as well as a final transcript and the details transcript.
+11:29
+So in this workflow if you really realized what now you have to do it
+11:35
+you'll have to try this thing and say it's nothing to worried about all these
+11:39
+the data are the kind of the data which we play around and that's much more easy
+11:46
+you can modify you can work on a different data uploading and try and
+11:51
+then we can have the discussion uh you can post your question in advance we can
+11:57
+have another session And then I again will try to take the the different flow
+12:03
+flows as well as the modification any bugs and errors if there are uh please
+12:09
+do not hesitate to come back. So once again if you go here we can see the
+12:16
+the uh the things. So the this girl can see the the results and if you go here
+12:24
+exam application profile uh so
+12:30
+it's shown here exam results only the semester one results are shown so things
+12:38
+like that and the semester 2 I didn't process uh it's exactly the same way
+12:44
+then after that you can push the student to second year and do the the work third
+12:50
+year, fourth year and things like that. So, uh specialization process I'll take
+12:57
+it on another day but it is very important now understand and practice
+13:03
+and then identify things that need some modification. Okay. So I'll share the
+13:10
+the links with all of you and go through and start the continue the communication
+13:16
+and we can have an online discussion as soon as you finish that one.

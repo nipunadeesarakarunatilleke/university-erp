@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── Top Navbar ─────────────────────────────────────────────────────── -->
+  <nav class="navbar navbar-dark navbar-expand-md erp-nav">
+    <div class="container-fluid">
+      <span class="navbar-brand">
+        <i class="bi bi-mortarboard-fill me-2"></i>University ERP
+        <span class="badge bg-light text-primary ms-2 prototype-badge">Prototype</span>
+      </span>
+      <div class="d-flex align-items-center gap-2 flex-grow-1 justify-content-end">
+        <div id="token-status" class="token-pill token-missing">
+          <i class="bi bi-key-fill me-1"></i><span>No token</span>
+        </div>
+        <div class="input-group input-group-sm" style="max-width:440px">
+          <span class="input-group-text bg-white border-end-0">
+            <i class="bi bi-shield-lock text-secondary"></i>
+          </span>
+          <input
+            type="password"
+            id="jwt-token"
+            class="form-control border-start-0 ps-0"
+            placeholder="Paste JWT token here…"
+            autocomplete="off"
+          >
+          <button class="btn btn-light" id="toggle-token-visibility" title="Show/hide token">
+            <i class="bi bi-eye"></i>
+          </button>
+          <button class="btn btn-warning" id="save-token-btn">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Token Setup Banner ─────────────────────────────────────────────── -->
+  <div id="token-banner" class="token-banner d-none">
+    <div class="container-fluid">
+      <i class="bi bi-info-circle-fill me-2"></i>
+      <strong>No token found.</strong> Generate one by running
+      <code>node scripts/generate-token.js</code> in the project root, then paste it above.
+    </div>
+  </div>
+
+  <!-- ── Main Layout ────────────────────────────────────────────────────── -->
+  <div class="container-fluid px-4 py-3">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs erp-tabs mb-3" id="mainTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-dashboard" role="tab">
+          <i class="bi bi-speedometer2 me-1"></i>Dashboard
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-students" role="tab" id="tab-students-btn">
+          <i class="bi bi-people me-1"></i>Students
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-exams" role="tab" id="tab-exams-btn">
+          <i class="bi bi-journal-text me-1"></i>Exams
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-enrolment" role="tab" id="tab-enrolment-btn">
+          <i class="bi bi-pencil-square me-1"></i>Enrolment
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-results" role="tab" id="tab-results-btn">
+          <i class="bi bi-bar-chart-line me-1"></i>Results
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-specialization" role="tab" id="tab-spec-btn">
+          <i class="bi bi-mortarboard me-1"></i>Specialization
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-notifications" role="tab" id="tab-notif-btn">
+          <i class="bi bi-bell me-1"></i>Notifications
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- ── Dashboard ────────────────────────────────────────────────── -->
+      <div class="tab-pane fade show active" id="tab-dashboard" role="tabpanel">
+        <div class="row g-3 mb-4">
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-student">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-people fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Student Service</div>
+                  <div class="small text-muted">localhost:3001</div>
+                </div>
+                <div id="health-student" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-exam">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-journal-text fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Exam Service</div>
+                  <div class="small text-muted">localhost:3003</div>
+                </div>
+                <div id="health-exam" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-auth">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-shield-lock fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Auth Service</div>
+                  <div class="small text-muted">localhost:3007</div>
+                </div>
+                <div id="health-auth" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-result">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-bar-chart-line fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Result Service</div>
+                  <div class="small text-muted">localhost:3004</div>
+                </div>
+                <div id="health-result" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-transcript">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-file-earmark-text fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Transcript Service</div>
+                  <div class="small text-muted">localhost:3005</div>
+                </div>
+                <div id="health-transcript" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-notification">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-bell fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Notification Service</div>
+                  <div class="small text-muted">localhost:3006</div>
+                </div>
+                <div id="health-notification" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <div class="card h-100 health-card" id="card-kafka">
+              <div class="card-body d-flex align-items-center gap-3">
+                <div class="health-icon bg-secondary-subtle">
+                  <i class="bi bi-lightning-charge fs-4 text-secondary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-semibold">Kafka Broker</div>
+                  <div class="small text-muted">localhost:9094</div>
+                </div>
+                <div id="health-kafka" class="health-badge badge bg-secondary">
+                  <i class="bi bi-circle-fill me-1"></i>Checking…
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2 d-flex align-items-center">
+            <button class="btn btn-outline-primary w-100" onclick="checkHealth()">
+              <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick-start guide -->
+        <div class="card bg-light border-0">
+          <div class="card-body">
+            <h6 class="fw-semibold mb-3"><i class="bi bi-lightning-charge-fill text-warning me-1"></i>Quick Start</h6>
+            <ol class="mb-0 small lh-lg">
+              <li>Start services: <code>docker-compose up --build</code></li>
+              <li>Generate a token: <code>node scripts/generate-token.js</code></li>
+              <li>Paste the token into the field above and click <strong>Save</strong></li>
+              <li>Go to <strong>Students</strong> tab — create a student</li>
+              <li>Go to <strong>Exams</strong> tab — create an exam</li>
+              <li>Go to <strong>Enrolment</strong> tab — select an exam, select a student, click <strong>Enrol</strong></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Cross-service flow diagram -->
+        <div class="card mt-3 border-0 bg-primary-subtle">
+          <div class="card-body">
+            <h6 class="fw-semibold mb-3"><i class="bi bi-diagram-3-fill text-primary me-1"></i>Cross-Service Flow (Enrolment)</h6>
+            <div class="flow-diagram small">
+              <span class="flow-box">Browser</span>
+              <span class="flow-arrow"><i class="bi bi-arrow-right"></i> POST /api/exams/:id/entries</span>
+              <span class="flow-box text-success border-success">Exam Service :3003</span>
+              <span class="flow-arrow"><i class="bi bi-arrow-right"></i> GET /api/students/:id</span>
+              <span class="flow-box text-primary border-primary">Student Service :3001</span>
+              <span class="flow-arrow text-muted"><i class="bi bi-arrow-return-left"></i> 200 OK</span>
+              <span class="flow-box text-success border-success">Create Entry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Students ──────────────────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-students" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Create form -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-person-plus me-1"></i>Create Student
+              </div>
+              <div class="card-body">
+                <form id="form-create-student" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="s-name" placeholder="e.g. Alice Perera" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="s-email" placeholder="alice@university.edu" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Student ID <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="s-studentid" placeholder="e.g. SC2024001" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Programme</label>
+                    <input type="text" class="form-control" id="s-programme" placeholder="e.g. BSc Computer Science">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-plus-lg me-1"></i>Create Student
+                  </button>
+                </form>
+                <div id="msg-create-student" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Students list -->
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-people me-1"></i>Students</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadStudents()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Student ID</th>
+                        <th>Programme</th>
+                        <th>MongoDB _id</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-students">
+                      <tr><td colspan="5" class="text-center text-muted py-4">No students yet</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bulk Import card (G3) — admin only -->
+          <div class="col-12" id="bulk-import-card">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-upload me-1"></i>Bulk Import Students (CSV)
+              </div>
+              <div class="card-body">
+                <p class="small text-muted mb-2">
+                  Paste CSV with header: <code>name,email,studentId,programme,batch</code>
+                </p>
+                <textarea class="form-control font-monospace small mb-2" id="bulk-csv" rows="5"
+                  placeholder="name,email,studentId,programme,batch&#10;Alice Perera,alice@rjt.ac.lk,AG/2021/001,BSc Agriculture,2021&#10;Bob Silva,bob@rjt.ac.lk,AG/2021/002,BSc Agriculture,2021"></textarea>
+                <button class="btn btn-warning" onclick="bulkImportStudents()">
+                  <i class="bi bi-cloud-upload me-1"></i>Import Students
+                </button>
+                <div id="msg-bulk-import" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Exams ─────────────────────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-exams" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Create form -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-plus-square me-1"></i>Create Exam
+              </div>
+              <div class="card-body">
+                <form id="form-create-exam" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="e-title" placeholder="e.g. Midterm Exam 2025" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Course ID <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="e-courseid" placeholder="e.g. CS301" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Date &amp; Time <span class="text-danger">*</span></label>
+                    <input type="datetime-local" class="form-control" id="e-date" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Venue</label>
+                    <input type="text" class="form-control" id="e-venue" placeholder="e.g. Hall A, Room 201">
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-plus-lg me-1"></i>Create Exam
+                  </button>
+                </form>
+                <div id="msg-create-exam" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exams list -->
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-journal-text me-1"></i>Exams</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadExams()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                        <th>MongoDB _id</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-exams">
+                      <tr><td colspan="6" class="text-center text-muted py-4">No exams yet</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Enrolment ─────────────────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-enrolment" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Enrol form -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-person-check me-1"></i>Enrol Student
+              </div>
+              <div class="card-body">
+                <form id="form-enrol" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Exam <span class="text-danger">*</span></label>
+                    <select class="form-select" id="enrol-exam" required>
+                      <option value="">— Select exam —</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Student <span class="text-danger">*</span></label>
+                    <select class="form-select" id="enrol-student" required>
+                      <option value="">— Select student —</option>
+                    </select>
+                  </div>
+
+                  <!-- Cross-service note -->
+                  <div class="alert alert-info py-2 small mb-3">
+                    <i class="bi bi-info-circle me-1"></i>
+                    Enrolment triggers a <strong>cross-service REST call</strong>: Exam Service → Student Service to verify the student exists.
+                  </div>
+
+                  <button type="submit" class="btn btn-success w-100">
+                    <i class="bi bi-check2-circle me-1"></i>Enrol Student
+                  </button>
+                </form>
+                <div id="msg-enrol" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entries list -->
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between align-items-center">
+                <span id="entries-header"><i class="bi bi-list-check me-1"></i>Exam Entries</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadEntries()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Student Name</th>
+                        <th>Student (MongoDB _id)</th>
+                        <th>Enrolled At</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-entries">
+                      <tr><td colspan="5" class="text-center text-muted py-4">Select an exam to view entries</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Results ──────────────────────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-results" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Controls -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-bar-chart-line me-1"></i>View Results
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Student</label>
+                  <select class="form-select" id="results-student-select">
+                    <option value="">— Select student —</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary w-100 mb-3" onclick="loadResults()">
+                  <i class="bi bi-search me-1"></i>Load Results
+                </button>
+                <div id="gpa-summary"></div>
+              </div>
+            </div>
+
+            <!-- Upload single result (admin only) -->
+            <div class="card mt-3" id="upload-result-card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-upload me-1"></i>Upload Result
+              </div>
+              <div class="card-body">
+                <form id="form-upload-result" novalidate>
+                  <div class="mb-2">
+                    <label class="form-label">Student (MongoDB _id) *</label>
+                    <select class="form-select form-select-sm" id="res-student-id">
+                      <option value="">— Select —</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label">Student Reg No *</label>
+                    <input type="text" class="form-control form-control-sm" id="res-reg-no" placeholder="e.g. AG/2020/001">
+                  </div>
+                  <div class="row g-1 mb-2">
+                    <div class="col-6">
+                      <label class="form-label">Subject Code *</label>
+                      <input type="text" class="form-control form-control-sm" id="res-subject-code" placeholder="AS1.1">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Subject Name</label>
+                      <input type="text" class="form-control form-control-sm" id="res-subject-name" placeholder="Agriculture Dev.">
+                    </div>
+                  </div>
+                  <div class="row g-1 mb-2">
+                    <div class="col-4">
+                      <label class="form-label">Marks *</label>
+                      <input type="number" class="form-control form-control-sm" id="res-marks" min="0" max="100">
+                    </div>
+                    <div class="col-4">
+                      <label class="form-label">Grade *</label>
+                      <select class="form-select form-select-sm" id="res-grade">
+                        <option value="">—</option>
+                        <option>A+</option><option>A</option><option>A-</option>
+                        <option>B+</option><option>B</option><option>B-</option>
+                        <option>C+</option><option>C</option><option>C-</option>
+                        <option>D+</option><option>D</option><option>F</option>
+                      </select>
+                    </div>
+                    <div class="col-4">
+                      <label class="form-label">Credits</label>
+                      <input type="number" class="form-control form-control-sm" id="res-credits" value="3" min="1">
+                    </div>
+                  </div>
+                  <div class="row g-1 mb-3">
+                    <div class="col-6">
+                      <label class="form-label">Acad. Year *</label>
+                      <input type="number" class="form-control form-control-sm" id="res-acad-year" placeholder="1" min="1" max="4">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Semester *</label>
+                      <input type="number" class="form-control form-control-sm" id="res-semester" placeholder="1" min="1" max="8">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-success w-100">Upload Result</button>
+                </form>
+                <div id="msg-upload-result" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results table -->
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between align-items-center">
+                <span id="results-header"><i class="bi bi-table me-1"></i>Results</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadResults()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Year</th>
+                        <th>Sem</th>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>GP</th>
+                        <th>Credits</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-results">
+                      <tr><td colspan="8" class="text-center text-muted py-4">Select a student to view results</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Specialization (G9) ────────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-specialization" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Apply form -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-mortarboard me-1"></i>Apply for Specialization
+              </div>
+              <div class="card-body">
+                <form id="form-apply-spec" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Student</label>
+                    <select class="form-select" id="spec-student-id"></select>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label">Preferences (rank order)</label>
+                    <p class="small text-muted mb-1">Select up to 3, in order of preference:</p>
+                    <div id="spec-preferences-list">
+                      <!-- filled by JS -->
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 mt-2">
+                    <i class="bi bi-send me-1"></i>Submit Application
+                  </button>
+                </form>
+                <div id="msg-apply-spec" class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Admin assign card -->
+            <div class="card mt-3" id="spec-assign-card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-person-check me-1"></i>Assign Specialization
+              </div>
+              <div class="card-body">
+                <form id="form-assign-spec" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label">Student</label>
+                    <select class="form-select" id="spec-assign-student"></select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Assign to</label>
+                    <select class="form-select" id="spec-assign-value"></select>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">
+                    <i class="bi bi-check-lg me-1"></i>Confirm Assignment
+                  </button>
+                </form>
+                <div id="msg-assign-spec" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Applications list -->
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between">
+                <span><i class="bi bi-list-task me-1"></i>Pending Applications</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadSpecApplications()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Student</th>
+                        <th>Student ID</th>
+                        <th>1st Choice</th>
+                        <th>2nd Choice</th>
+                        <th>3rd Choice</th>
+                        <th>Status</th>
+                        <th>Assigned</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-spec-applications">
+                      <tr><td colspan="7" class="text-center text-muted py-4">No pending applications</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Notifications (G11) ───────────────────────────────────────── -->
+      <div class="tab-pane fade" id="tab-notifications" role="tabpanel">
+        <div class="row g-3">
+
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-header erp-card-header">
+                <i class="bi bi-funnel me-1"></i>Filter
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label small">Topic</label>
+                  <select class="form-select form-select-sm" id="notif-topic-filter">
+                    <option value="">All topics</option>
+                    <option value="student.created">student.created</option>
+                    <option value="exam.registered">exam.registered</option>
+                    <option value="result.published">result.published</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary w-100 btn-sm" onclick="loadNotifications()">
+                  <i class="bi bi-search me-1"></i>Load
+                </button>
+              </div>
+            </div>
+
+            <div class="card mt-3 bg-primary-subtle border-0">
+              <div class="card-body small">
+                <strong class="d-block mb-1"><i class="bi bi-lightning-charge-fill text-warning me-1"></i>Kafka Flow</strong>
+                <code class="d-block">student.created</code>
+                <span class="text-muted">Student Service → Notification</span>
+                <hr class="my-2">
+                <code class="d-block">exam.registered</code>
+                <span class="text-muted">Exam Service → Notification</span>
+                <hr class="my-2">
+                <code class="d-block">result.published</code>
+                <span class="text-muted">Result Service → Notification</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="card">
+              <div class="card-header erp-card-header d-flex justify-content-between">
+                <span id="notif-header"><i class="bi bi-bell me-1"></i>Notification Log</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadNotifications()">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover erp-table mb-0">
+                    <thead>
+                      <tr>
+                        <th>Time</th>
+                        <th>Topic</th>
+                        <th>Message</th>
+                        <th>Recipient</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-notifications">
+                      <tr><td colspan="5" class="text-center text-muted py-4">Click Load to view notifications</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /.tab-content -->
+  </div><!-- /.container-fluid -->
+
+  <!-- ── Toast ─────────────────────────────────────────────────────────── -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1100">
+    <div id="erp-toast" class="toast align-items-center border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body" id="erp-toast-body"></div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,717 @@
+uh I will uh first go through with the uh the student list I'll browse it and
+0:13
+let's select the one students and go through and as from beginning to end we
+0:20
+select the students chhat chhaturika sorry charunika and this is the student
+0:29
+uh And if we click this one what we see here sees enroll student academic year
+0:37
+still we have not assigned nothing all details are blank and the personal
+0:43
+information you will see the basics information of name and the ID uh number
+0:51
+initials those thing are there but then the students and if we think about the
+0:57
+student login Click this uh select the his username and logged into the uh our
+1:06
+portal student portal where I put the uh student registration number and ID
+1:13
+number like this copy paste here and uh where let me and I'll put the the
+1:22
+password and then login and when I log in and this is the first time the
+1:29
+student login the uh the profile details are shown like this. So the basic things
+1:35
+the student can if he wants can edit some details
+1:41
+uh for example the date of birth. So let's put it in a random date uh 2000
+1:47
+and race and singha religion Buddhist citizens Sri Lanka and uh whatever the
+1:56
+contact information already when we are creating the accounts updated things are
+2:00
+there if the permanent address and the contact address is going to be the same
+2:08
+the people can put select this one then it's automatically copied otherwise
+2:12
+people will have to type. So the district is Gaha
+2:17
+uh Graham and Ladhari uh division let's say Gaha town
+2:23
+Gaha town I just put it uh and the electro
+2:32
+rate uh say B uh for the random data then uh information
+2:44
+of the father name let's say uh silver okay so something like that and
+2:52
+the occupation uh I say
+2:56
+um something like that okay businessman
+3:00
+just put it whatever and I'll put like the the work address is uh
+3:10
+sorry Uh, come
+3:16
+down contact number. I'll put a random number
+3:26
+like this. Okay. Emergency contact. Uh, I'll put some address and some
+3:34
+random numbers. And uh these are the this is what Charuni Charunika is going
+3:40
+to do and he may up click once he's doing it update profile. So this may
+3:46
+happen on the first day when he comes where we can ask students to go to the
+3:50
+lab and update the information and once they update their interface looks like
+3:55
+there but update profile they can see uh any time exam results nothing exam
+4:04
+applications nothing so they can't apply any examation they don't have anything
+4:12
+and then let's move to our portal and here is the charunika's uh the page and
+4:21
+where now what we really want we wanted to let's assume we wanted to enroll her
+4:28
+into the academic year one so in order to do that one usually we go here uh the
+4:38
+registration link and upload your registration and when you go to the
+4:44
+upload year registration. You will see the instructions. You'll have to upload
+4:50
+uh the students registration number academic year
+4:55
+uh and the study year and the paid amount need the hostel those details and
+5:02
+uh since uh we were uh looking at the I'll open another browser uh to get
+5:11
+these things for the easiness. So we are concentrating on this person Charunikica
+5:19
+and uh we are trying to upload the uh trying to register to the first year.
+5:25
+So then we need uh to upload the relevant file with this detail. So I'll
+5:32
+go to the move to the relevant file now. Okay. So I have a
+5:49
+the kind of uh file like as you can see here uh it's
+5:58
+the the year registration first year registration. Let me open the file. This
+6:05
+file usually this is done by the S exam. The file contains the should have the
+6:12
+structure which which is given in the instruction here. Registration number,
+6:17
+year, study year, paid amount, need a host and let's take the student
+6:23
+uh uh registration number. It's we know 17.
+6:30
+And uh we open there and we'll type that registration number. It's again going to
+6:37
+be 2020. And the study here we know that we are going to put into one and the
+6:43
+paid amount it's a 500 and the host we say yes and then
+6:51
+um and we save the file. Okay. Now what I'll go here I'll go to the
+6:59
+student import yearly student registration. Okay here I'll browse this
+7:05
+one and we'll go to the my file where I put
+7:11
+it like the semester registration and the year registration. If you can
+7:16
+remember this is the file year one registration I select that one open. So
+7:22
+the file name here. So update the existing records. I mean already there
+7:26
+may be previous records but I'm only going to update the new thing which I
+7:31
+insert to that. So when I click this things I can see file was uploaded. And
+7:37
+now if I go to the student details and now this is the charunikas page. I'll
+7:45
+refresh it. And the moment you refresh you can see
+7:50
+now the this girl is in the academic year one. So he is increased. So like
+7:56
+that the all the students I just only showing only one students but the rest
+8:01
+of the information are like here batch regulation
+8:07
+registration index number nothing she has not done any exams now still no page
+8:15
+no index number no file. So I'll also show it here just to remember how we do
+8:20
+it. So suppose if we go here upload profile pictures
+8:26
+and if I select profile choose the file instruction you can always see uh how it
+8:32
+should be one by one as in a batch file how it could be done but file list if I
+8:40
+click this thing and oh let me go to the MIS I put the student registration
+8:50
+Yes. Um I remember this student we were looking was uh sorry was someone just
+9:00
+wanted to see the registration number of that student student accounts view
+9:11
+students I'll go here quickly uh and search yes charunic one so
+9:20
+details was something like yes now I know uh
+9:26
+uh registration number ID number it's something like personal profile yeah 99
+9:35
+500 is the last number so here if we go student images import profile choose
+9:44
+file and uh I'll select go to this I have the file here. Yes. So
+9:56
+this is the the file you can remember. So I'll select the file. So it's here
+10:00
+and I click upload records. You can see the message file was uploaded. So once
+10:07
+it is done now go to the student. Now still this file is nothing. If you just
+10:13
+refresh it you get the uh picture here. Now if I
+10:19
+wanted to get the signature here, I'll go here again. I'll select the signature
+10:28
+and 1 minute.
+10:46
+Okay. Uh let me uh start. So suppose if I wanted to upload the signature, I'll
+10:52
+select the the signature file. Uh it should be uh
+11:02
+uh supported files. Uh student registration
+11:13
+signatures are here.
+11:17
+This is uh so I'll have to change the uh this person index number.
+11:26
+Sorry, it looks like not going to work there.
+11:31
+So uh let me uh let me check the the file.
+11:47
+Okay. Uh let me uh open the thing. Uh that's where you can see signature. I'll
+11:56
+choose it. I'll go to the sub directory. And this is the uh the signature file
+12:01
+saved in the uh u uh ID number. So I'll select this one.
+12:10
+So and then upload like the previous one. File was uploaded. And now if I go
+12:15
+to the student page and if I refresh, okay, I can see her signature. So this
+12:22
+is how we do it. Now if I go to the student one and if I refresh there,
+12:34
+takes a little bit time I guess. Let me
+12:46
+check that one. Okay. Uh if I go here due to some
+13:02
+technical thing the chhatur chhatika's photo is not shown. I'll check that one
+13:06
+and come back. But let's say if the if she uh click this exams results you are
+13:13
+very clear no results is shown. If we click the exam application well suddenly
+13:19
+the semester 2 exams are shown. Why that there is no semester one now this girl
+13:25
+is in the semester one sometimes the semester 1 exams may be over or it may
+13:31
+be the due exams is the semester 2 that may be one reason. So how do we really
+13:36
+check this one in the system? So here I show we go to the again the our
+13:41
+administrative portal what you can see here and click on top level
+13:48
+and look at the course schedules first. Okay, if you look at the course
+13:54
+schedules, what you can see? Let's say uh the
+13:59
+semester one. I'll click this one. Semester 1 and then search. Then you see
+14:05
+semester one exams start this day end March 3rd start date exam date exam
+14:15
+admission download exam registration exam semester one registration
+14:22
+everything is nice but you see the dates are gone today is the 11th May and sorry
+14:28
+it's 11th March and here semester one exam date was third so we'll have to
+14:33
+change this one and uh then we'll change both these two things and uh one is in
+14:40
+February, one in March and I'll make it this one as
+14:46
+uh schedule dates end date uh as a
+14:54
+um let's assume it like a 24th. Okay, save changes and then
+15:02
+semester admission application uh uh the date is also somewhere in the February
+15:08
+and I'm going to change that thing again this to something like uh uh March and
+15:16
+well make it like in 22 and save changes and I put it as the forward date now and
+15:25
+admission download I say enable Well know and which I can also change it. So
+15:31
+since we suppose that due to the pandemic we are going to help the both
+15:35
+exams one and two together. So I'll make it enable now that is otherwise no one
+15:41
+will be able to download this uh will have a control. So I'll have
+15:46
+edit available for the semester one. And if I select the semester two now and see
+15:54
+h like that what you can see okay all the overdue dates are quite okay March
+16:02
+31st uh this is a admission download end date is somewhere
+16:11
+27th okay so technically it better to get in a closer date let's make it let's
+16:17
+make it like in a closer it like the
+16:24
+sorry 21st
+16:28
+March I'll make it like in the 20th okay change this and that's better that is
+16:36
+semest then what I do is I'll go to the student
+16:46
+management student uh de students I'll go to the now this is the student
+16:55
+sorry I'll went to the wrong list is this
+17:02
+chhatika okay it takes uh she's there then what happened now we
+17:13
+want to shall we check uh profile page and go and refresh.
+17:30
+Exam results nothing. Exams application still semester 2.
+17:37
+Still semester 1. We can't see something is wrong. Let me check.
+17:49
+Okay. Uh the our problem is we can't see the semester one. The student cannot
+17:54
+apply the semester one exam registration. I'll go to the again the
+18:00
+administration portal and look at the semester one. So there I can see the
+18:06
+semester 1 exam registration. The end date was already passed that is the
+18:11
+March 6. So today is in a math level. So that's why students cannot do this one.
+18:17
+Suppose if I select this one change this day to say about 15th okay next Monday.
+18:25
+Save changes and then uh I'll go back again to the student
+18:32
+portal and refresh it. What you can see immediately you can see both semester 1
+18:38
+and two comes. And now I click the semester one. Now we are going to have
+18:43
+the both semester 1 and semester 2 exams together and this student is supposed to
+18:48
+register for the exam. Now all these are compulsory subjects that's why they are
+18:53
+by default selected. So usually the student will have to press the select
+18:58
+and then things will be uh added to the as an application. So
+19:04
+exam uh registration application is submitted. Assume just for the things
+19:10
+this student is not going to do the general English okay course in this
+19:17
+semester and also the computer literacy two
+19:22
+courses these two courses and she is not going
+19:27
+to sit so he click not going to register and say register and then at the moment
+19:34
+you click you will see uh view approved subjects
+19:40
+blank nothing and then go back again and semester 2 the student is also select
+19:48
+the semester 2 so everything is by default is selected
+19:53
+again let's assume the we are not going the
+19:58
+she's not going to do the anatomy and uh uh whatever the subjects biochemistry
+20:09
+this sanit subjects and bio register for and both but when she clicks nothing
+20:19
+it's the register list is not shown now I'll go to the our portal okay uh our
+20:25
+portal is where is this there this registration now the student has applied
+20:34
+and exam management we and view application anytime.
+20:40
+So earlier now here if I go semester one selected and if I just simply click I
+20:47
+can see the students who have applied for the semester one examination. So
+20:52
+there are three people. Chhatnika is the one you may remember the one we worked.
+20:58
+She he has also applied. And if you click this one you will see the what are
+21:06
+the subjects she has applied but you may remember we didn't English one she's not
+21:12
+going to do. Okay. And um then also the computer liter. So if you collect uh
+21:20
+semester one or general English then the computer literacy is not going to do and
+21:27
+those two things are not given and she has not applied or registered and here
+21:34
+again uh what we can see uh approve the
+21:41
+subjects. So now this part is done by the heads of the department usually and
+21:48
+they have the rights or the course code or whatever the the respective people
+21:53
+and uh when they click this one and select semester one okay and subjects
+22:02
+semester one this there are semester one there are a lot of subjects agriculture
+22:07
+development that's the is one and get application If you click okay that girl
+22:15
+is has already applied. So if we select that one and the lecturer say update
+22:22
+what's really happen it's approved. Okay, it's approved and uh
+22:29
+now uh if we go to the the student list and uh say the exam application okay and
+22:38
+view the semester one okay the moment you click you can see the students see
+22:43
+agriculture development that subject is approved okay so that is the the kind of
+22:49
+the thing he can see and the semester one exam so like that It happens in that
+22:56
+way. Now in this uh way if we select the uh
+23:06
+things now we started on semester one. So what are the other the subjects
+23:11
+actrome trology and if I say the click so the same girl is there I'm going to
+23:17
+approve it. I mean this will be done by the different uh the coordinators or the
+23:22
+heads of the department or lecturers but I'm going to approve all the things
+23:27
+analytical chemistry okay she's there uh okay basic engineering we select and for
+23:38
+this one I'm not going to select basic engineering due to some reasons we are
+23:42
+not going to it's put it into the pending mode and then the basic
+23:46
+mathematics six. Okay, we'll have to update and then I'll
+23:53
+select the computer literacy and please get the get application. Oh, she is not
+23:58
+in the list. Why? She didn't apply. If you can remember that's why it doesn't
+24:03
+comes here. If she has not applied or registered uh the exams, so it will not
+24:09
+be listed for approve the subjects. So then it comes uh the farm and uh mecha
+24:17
+mechanization. So if you click you see that girl Chhatrronika
+24:23
+and approved and uh I'm going to get uh general English and clicked again
+24:31
+she's missing the reason she didn't apply for that one and then plant
+24:37
+uh systematics. Okay, click it and she's there. I'm going to approve. Uh so next
+24:46
+one principles. Okay. Well update
+24:54
+and then principles we have to click the get application.
+25:01
+Okay. That subject she has not applied principles
+25:06
+uh of animal production and health management.
+25:10
+So let me let let's go to her one principles. These are the subjects which
+25:16
+are shown here. Mhm. Uh 3
+25:22
+3 6 4 10. And if I click this one semester
+25:28
+one and bring 1 2 3 4 5 6 7. So there are still few more subjects which we she
+25:37
+has to get. Uh these are approved list uh and semester one. So
+25:47
+we'll have to go to the now portal and see what are the other remaining
+25:52
+subjects. Uh yeah she has some more pending will
+26:00
+approve and then we select social harmony and the peace yes she has
+26:08
+applied okay everything now suppose if after
+26:14
+approval and if I wanted to mandar who have been approved to put into an
+26:20
+appending level what I have to simply say I'll select this one and once I
+26:26
+selected if I simply update again uh no I say pending on their update
+26:36
+you can see without then everything become pending so it's a very important
+26:42
+you select uh let's say chika sorry charunika and if you click she's
+26:49
+approved so without that if you Say you can toggle the pending and approved
+26:55
+status like that and yes so all these whatever the thing semester one is
+27:02
+listed we have done and let's just let's go back and
+27:09
+uh one and select see so these are the list of the subjects few we didn't
+27:15
+approve okay no problem then what happened so semester one it's there
+27:23
+and the semester 2 semester two we didn't do it the same thing
+27:28
+uh the people will have to do and they can do it the similar thing so let me go
+27:33
+to the the file again what I will do it now approval approve the subjects
+27:40
+request so this is where the attendance and other conditions are satisfied the
+27:44
+department will uh follow will do will give the approval so that could be run
+27:51
+online and the print admission. This is the job of the our S and uh she can
+27:59
+select the semester one and select the uh proper admission not the repeat
+28:04
+courses the people who are doing she can put the registration number if
+28:09
+necessary. Uh for example, if we wanted to get this person admission only, we'll
+28:16
+select this thing and go here and put the registration and get the
+28:22
+application. Oh, something went wrong. Let me select
+28:29
+without that. Let's see proper admission. Oh, there was some some
+28:37
+mistakes that why I'll have to check that one. post that but then semester
+28:42
+one what are the proper admission available I can download let me save the
+28:47
+file like this and go here and I downloaded the file
+28:53
+there it is here is the application I'll double click this one
+28:58
+and then you can see uh okay all the candidates are here so she can download
+29:05
+it at once there are two can do 203. Uh this is the
+29:11
+girl which we started working on that. Yeah, sorry. Oh my
+29:20
+sorry. I'll have to deactivate it was start reading it here. Yeah. Uh
+29:26
+chhatunikas uh this admission card you can see only the approved one will comes
+29:33
+here. Okay. And others are not here. Okay. That's the one. So for example,
+29:40
+she didn't apply uh some of the things uh uh subjects
+29:47
+like you know computer literacy um
+29:52
+those subjects are not here. So then what happens? So that's the
+29:58
+printing the admission and so suppose now exams is conducted things happen
+30:05
+normally results management. So the next stage is the how do we upload the
+30:12
+results. So the suggestion here the uploading the results to the system is
+30:17
+done by the our sea not directly by the individual
+30:23
+lecturers. So what should happen individual lecturers will send the Excel
+30:28
+file and exam results and I assume they will have some sort of an exam board and
+30:35
+after the exam board for that particular subjects the results will be uploaded
+30:41
+here. So let's uh uh try to do for this thing to the that
+30:49
+student who did the the subjects different things. Okay. And let's start
+30:55
+doing it uh for that student. Yes.
+31:02
+Okay. Yeah. Let's uh consider now if you look at this student semester 1 uh
+31:09
+suppose she has done these courses AS1.1
+31:15
+and we go to the uh uh the course and where we have to upload the the subject
+31:24
+uh we'll have to follow this format. We'll have to browse it uh to go to the
+31:31
+resource. So I'm keeping all these files. So AS11 before that let me
+31:38
+go and double click and open the file AS1.1
+31:44
+and the student number if I remember it was 70. Okay.
+31:51
+And uh here I'll put it like in the 17
+31:59
+and uh I'll put the marks is the different one. So whatever the marks
+32:05
+here the subject code is the same. I'll put the file called the result one is
+32:10
+11.1 and put here like 81
+32:15
+and she's got an A and then we save the file
+32:24
+close it and come here I'll open the file sorry it should be
+32:35
+yes this is the file and comes processing subjects. I'll have to select
+32:41
+as one one agriculture and development.
+32:56
+Okay. Update existing records. Yes. Okay. Say
+33:01
+I'll click this one. Then it shows there are
+33:06
+these are the results. So you can see 16 17 both are there. So after the exam
+33:12
+board of the subject AS1.1 S exam will do this uploading and you
+33:19
+may click the process. So confirm upload. So the moment now the results
+33:23
+are uploaded to the system. when the result is loaded. Uh so if we go to the
+33:33
+student account okay and uh if we look at click the exam results you will be
+33:41
+able to see uh Charunika's uh results like this. And if
+33:48
+we go to the student page and if the if we now click the exam
+33:55
+results and the semester one here you can see the results. So now the similar
+34:03
+things can be done for the all the subject. It's a very simple I'll do a
+34:07
+few more things um just for the demonstration and move
+34:13
+the student management. Let's select the other subjects.
+34:17
+uh as okay we'll change the results of all these files so then it's much more
+34:24
+easier it's a matter of uh changing them so I have already done
+34:32
+the one person and uh click this one we are changing to
+34:38
+the date as 17 and uh yeah
+34:45
+H uh sorry I think I earlier made a
+34:49
+mistake. This year is academic. It should be 2020
+34:55
+not 2020. It's not the first year academic year. And uh let's make it like
+35:02
+you know 59 and let's say C++
+35:08
+just randomly putting value save
+35:13
+uh I'll take
+35:20
+also a file I think I put as year as a one better we put it here as a academic
+35:28
+year that's very important because every academic Click here it comes. The here
+35:32
+means that 20 2020
+35:40
+and save it. More to the other subjects.
+35:55
+Okay. Click. So after the exam board of this one, it
+36:01
+should comes 2020 2020
+36:07
+uh 69. Okay. And we saw whatever the things and um you're not verifying. So
+36:17
+whatever the grades you can post and save and go to the other one.
+36:31
+And here again 2020 copy the record to the another one.
+36:54
+and number nine
+37:02
+class save
+37:08
+uh I'll open and create the several of these files so to keep it to do it let
+37:17
+me change all the files so then it will be quickly
+37:31
+So I have done the changes. So let me start uploading those reset.
+37:38
+And uh this is a AS1
+37:47
+AS112 1 1 0 AS1 1 0
+37:54
+2. Yes, that's the one you know the subjects and
+37:59
+update the existing record. I'll save it. Upload the subject could not be
+38:04
+matched. Something is wrong. So you'll have to go back and check the file
+38:10
+AS112. That's thing. Let's go and check that
+38:23
+uh section S112.
+38:42
+So this might happen sometimes some characters looks like quite okay.
+38:49
+So if you do the copy pasting some cases it may happen. So best thing
+38:57
+we'll delete the thing and type it as one one no two sorry
+39:10
+102 and
+39:17
+file issues could happen like this and uh we'll see how it work.
+39:29
+I realized my mistakes. The file is AS112. But what I have selected AS12.
+39:36
+That's why the the message error message subject code didn't match. So
+39:42
+select the right one. AS12 is the basic mathematics. And then if
+39:49
+you click it, you will see the results. Oh yes, here it is short. Then if
+39:54
+everything is okay, you press the upload. Yes. Yes, it's gone. Now the
+39:59
+next one or CC
+40:08
+C. This is C C1
+40:22
+1 0. Okay. Upload. Show the records. Two records. Okay.
+40:28
+Then do it. File is uploaded. And like that. Next one. EG11.
+40:37
+EG. E E G E E E E E E E E E E E E E E E E E
+40:42
+E E E Yes. Yes. Eg. It's on top. EG1103
+40:49
+general English uploaded remember uh this doesn't contains the other
+40:57
+record something is wrong we put it maybe I have not uploaded
+41:04
+um she didn't apply for that one but I wanted to do purposely I wanted to put
+41:11
+the resultas even though it's someone because the restriction is not here.
+41:17
+Okay. I have not uploaded the record. So, what I can do is I'll copy it like
+41:24
+this just for the testing and we'll change
+41:29
+the record 17 and here 2020 2020
+41:37
+I'll change 75.
+41:41
+Okay. And let's make it big. and uh save changes
+41:49
+and I'll go back again and I'll say upload
+41:53
+then you get the all the records including 75 okay and once it's done you
+41:59
+say upload records done so then
+42:05
+AG is done for the uh we have done the EG11 so ES
+42:15
+ES11. So ES11
+42:20
+again go ES1 1.1 Acromeology.
+42:28
+Okay. Upload. Here is the record.
+42:34
+Done. Now this is once after the exam board.
+42:40
+We'll have to do this one. and yes
+42:54
+113. So I will upload all these results now.

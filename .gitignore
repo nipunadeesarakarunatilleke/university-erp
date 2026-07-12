@@ -1,0 +1,21 @@
+# Environment — never commit real secrets
+.env
+
+# Node dependencies — rebuilt via npm install / Docker
+node_modules/
+**/node_modules/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Docker uploaded files (runtime volume)
+services/student-service/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/

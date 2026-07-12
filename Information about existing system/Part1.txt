@@ -1,0 +1,149 @@
+ hello uh welcome to the third session of the
+0:13
+uh introduction to the MIS system. So I'm going to demonstrate the some of the
+0:20
+features. Let me share the screen first. Uh I will share the screen. Yes. Uh
+0:29
+so this is the the main page and I hope uh you can now see the the
+0:39
+content Yeah. Now uh first you have to go to the
+1:02
+the system login here https agree mis rjac.lk
+1:09
+and admin/ login. Uh this is the where only the
+1:14
+staff can log in. No students will be allowed. So here I will log in. So once
+1:20
+I logged in you will see the uh this kind of a screen with the dashboard and
+1:26
+the the system uh features student management registration exam management
+1:32
+results management transcripts. Uh today my main objective is to show you how the
+1:38
+examination results work on. So first uh let's start uh to show that as I
+1:45
+explained last time when we click the student management menu you will see
+1:51
+uh several sub menus comes under them. Uh first one is a view students upload
+1:56
+accounts upload profile pictures upload documents remove transferred update
+2:01
+update graduate list. uh mainly the view students is usually uh the relevant
+2:09
+staff members uh academic staff members can uh go through them not all but we
+2:16
+have decided at the moment only the dean heads of the departments and the uh
+2:22
+staff in the exam division will be will access that one and then
+2:29
+uh but uh here if you click the view students you will see the several uh the
+2:36
+batches active batches you can see here. Now for example here the notation 2019
+2:44
+2020 uh mean uh this is the the batch where
+2:50
+students who have done a level in probably the 2019 got entered into the
+2:55
+2020 here 2020 2021 means the other way where the the batch
+3:03
+who did a level on there and if you select any batch like this and if you
+3:10
+click search you will be able to see the list of the students. Now here if I
+3:17
+wanted to see let's say for example this students the first one uh M bandar so
+3:25
+probably if I a student uh registration number ID number it's there so if I
+3:33
+clicked you may remember that the is profile page is open
+3:39
+uh yeah the bandara and the details is uh signature we have noted uploaded. So
+3:46
+the S usually upload the relevant details like the profile pictures and
+3:51
+the signature and the other documents. Uh usually it is the responsibility of
+3:57
+the exam division. Here the academic information are shown,
+4:02
+scholarship information and the remarks also could be added.
+4:07
+And if the we select the personal profile, it shows here uh the personal
+4:12
+profile teachers and then exam results. At the moment the student
+4:20
+doesn't have any exam results that's why you see blank and the payments if he has
+4:26
+made a payment that is shown here. he has made one payment for the first year
+4:31
+and they are and uh the this uh then if I if you looked at here in the academic
+4:39
+profile uh the student is an enrolled students currently in the academic year
+4:45
+one uh because of the system features we have put him agriculture biology
+4:50
+specialization uh but this could be customized where
+4:55
+usually I know that the students after their uh second year, second uh uh sorry
+5:03
+third year, second semester, the sixth semester onwards the specialization
+5:08
+come. Um so here uh no details are shown but this is the the staff how the
+5:16
+students will see uh and the student uh will see his profile in a different way
+5:24
+where I will open another browser. Uh please give me a minute to open it in
+5:32
+another browser. So I use another browser and I'll type
+5:44
+the word the students portal. It goes agree misrjac.lk
+5:50
+and the students usually use their student ID number registration number.
+5:56
+Now sorry I have not yet shared the screen.
+6:02
+Let me start uh sharing the relevant screen. I think
+6:06
+it's I'm in the the wrong screen. Uh screen. Uh yes. Now this is the screen
+6:15
+where you will see the student portal. Uh it's from here where the registration
+6:22
+number, password come. And I'm going to type the the band. You may remember who
+6:28
+did the other one which I will put is registration number. Password is by
+6:36
+default is the the person ID number and I type the ID number like
+6:43
+this and say login and then yes now when the this is what
+6:51
+the bandara will see his profile. So student portal personal information
+6:57
+contact information. So we have just entered some random data. That's what's
+7:02
+here. And if the bandara wants to update the profile, she can update not all
+7:08
+information but some given set of an information. And uh for example, the
+7:15
+bandara cannot change the contact permanent contact address ID number his
+7:19
+full name and uh the name with um full name, initials,
+7:29
+uh those things. But um some of the details of course he can
+7:35
+change. Now for example if we wanted to change this one to elector rate in the u
+7:43
+say uh uh elector rate and uh the he can do the update profile.
+7:55
+So it will change and then you will say the you will see the new elector rate
+8:01
+whatever the modification comes here and the same thing is replicated on the
+8:06
+profile and uh when the bandara select the exam
+8:12
+results he will see nothing no results exam application of course because if
+8:18
+you remember bandara was a first year student uh therefore his application
+8:25
+ations details are there and let's start uh where he can apply the different
+8:31
+things but let me uh start with a new uh students because to show you how this
+8:38
+examination uh process works.

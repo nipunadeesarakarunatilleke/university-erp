@@ -1,0 +1,1665 @@
+
+0:11
+/
+1:51:29
+Search transcript
+0:00
+School of Computing University of Colbo and Mrs. Kalpa Nadiparan assistant
+0:06
+registra of our faculty and Mrs. Leani Somarata the instructor of computer
+0:12
+center of our faculty and dear students I warmly welcome you all for this
+0:17
+session on management information system of the faculty. Okay. So as you know for
+0:23
+the first time in the faculty history so we established a management information
+0:29
+system to be benefited for students staff and administrative staff of the
+0:35
+faculty with the help of with a consultant uh from University of
+0:41
+Columbus school of computing. Professor Haga was the consultant for this
+0:46
+activity and this MIS or management information system was established from
+0:53
+the funds we received from ahead faculty DP. Okay. So uh so mainly focusing to
+1:01
+benefit for benefit to the students as well as for the staff especially the
+1:06
+administrative staff of the faculty. So thereby the students of the faculty in
+1:12
+forthcoming events maybe in your applying for semester semester
+1:16
+applications the examination applications. So the you are receiving
+1:21
+your results and re updating your profiles of all sort of things in future
+1:27
+you have to deal with management information system. So I think all
+1:31
+students now you are aware well with the LMS for your academic activity.
+1:38
+Similarly in future for with management information system you have to do lots
+1:45
+of things. So for for communicating maybe for examinations and other
+1:50
+administrative things with the faculty. So uh as I said already this activity
+1:56
+was funded by the ahead the ahead faculty defeat it was it it is the world
+2:03
+back funded project. So as a faculty uh the faculty of agriculture could able to
+2:09
+win win this grant. So from funds generated came from this grant we could
+2:15
+able to allocate some amount of funds to establish this management information
+2:20
+system and to achieve this task task as a re that means the uh to become this
+2:27
+the management information system a reality. Professor Hwag the professor
+2:32
+from school of computing university of columbu helps us a lot. He established
+2:38
+this system and also conduct some workshop for academic staff and today
+2:44
+he's going to conduct the sessions for our students. So uh since the you are
+2:50
+one of the main group uh among benefit out of this activity. So you have to
+2:59
+listen to this session carefully and if you have any questions I think still
+3:04
+some the accounts are not open yet but anyhow when the professor hewagami
+3:09
+explained what sort of procedures and what advantages are there you can gain
+3:13
+from this out of management information system you have to ask questions and you
+3:18
+have to clarify all points. So wishing you a successful session today. So uh
+3:25
+while dedicating your service rendered to our faculty professor Haga uh thank
+3:31
+you very much and over to you sir you can continue this session. Thank you
+3:35
+very much.
+3:36
+>> Thank you very much Dr. uh and uh good afternoon to all of you. Uh thank you
+3:44
+for inviting uh me for this session uh on introducing the management
+3:51
+information system of the agriculture faculty which was set up during the last
+3:56
+uh couple of years uh based using the as explained by Dr. using the funds of the
+4:03
+head project world bank funded head project uh uh for the benefit of the
+4:10
+faculty especially uh the students uh therefore it's uh very important to
+4:18
+introduce and also uh hereafter we can start using this uh management
+4:25
+information system we call it MIS okay uh and um that will help to uh uh make
+4:36
+it easy for all of you to do the work even without physically uh going to the
+4:42
+office and without disturbing to the people and also in a paperless
+4:47
+environment. So before I uh go into the the details
+4:52
+of this uh management information system uh let me briefly explain you uh what is
+5:00
+MIS and uh how this MIS has been set up at the uh faculty.
+5:10
+Well uh as name indicates uh management information system provides uh important
+5:19
+information uh for the decision making by the the
+5:24
+respective management of the organization.
+5:27
+Now in this faculty the management is the the main
+5:32
+administration starting from the dean of the faculty.
+5:37
+Then as you know that there are several administrative officers and also
+5:44
+academic staff members and uh also there are some uh those staff members are
+5:52
+group with respect to the uh the department wise since they offer the
+5:57
+different courses for the degree program and uh the courses are conducted exams
+6:04
+are held and the results are released And there is an a very big process
+6:10
+takes place from the very first day in your from the very first day of the
+6:16
+student to the the last date you are studying and until you graduate from the
+6:21
+university and this administration process uh some
+6:26
+of the things I think it's all of you are now familiar but some of the things
+6:30
+may not be uh familiar so you will be able to know them and Uh the the biggest
+6:38
+issue is sometimes you will have to physically uh go to the to do some small
+6:45
+work physically have to go to the the respective the divisions uh and the
+6:50
+departments and the meet the people when you go there. Sometimes the people will
+6:56
+be available, sometimes people may not be available. Then you have to visit it
+7:00
+again and uh it may take a lot of effort and time. Uh today's context well
+7:08
+traveling and going to the places and meeting the people becomes in a very
+7:13
+difficult especially due to the present situation in the country. But in
+7:17
+generally that waste a lots of resources uh valuable time uh of all the parties
+7:23
+and also the effort by the relevant parties is an issue.
+7:30
+Then the other matter I mean the most of the time you may see uh you will have to
+7:36
+fill small printed applications and uh you have to hand it over them in
+7:41
+writing. You have to make the request in writing. Even if you wanted to apply
+7:45
+something, you had to submit in a printed uh application that's also
+7:51
+making a kind of a difficult thing today's context because uh uh finding
+7:58
+the papers, printing papers is also very difficult uh since uh due to the uh
+8:06
+unavailability of the the papers and the other resources especially due to these
+8:12
+days. But however uh we have to minimize the use of the the
+8:18
+papers as much as possible. I think as the uh undergraduates of the agriculture
+8:25
+faculty, you understand the the importance of the
+8:30
+uh minimizing the use of the papers because
+8:35
+directly these papers are uh produced
+8:39
+using the uh the natural resources
+8:44
+and uh at the same time we need to um uh not only the papers, not only the the
+8:51
+time and the resources effort uh sometimes some decisions
+8:57
+uh taken by the administration it takes time to communicate them to the relevant
+9:03
+parties especially the students they don't know now uh I hope now everybody
+9:09
+understand the importance of the the learning management system LMS so uh
+9:17
+sometimes you don't want to physically go and look at the notice board to find
+9:21
+out the things. Um, a message could be posted on the LMS
+9:28
+learning management system within the as in a general main messages or even
+9:33
+within the courses messages could be posted and if you have an email account
+9:38
+you will immediately receive the a message and without physically going you
+9:44
+can get a message and also you can anytime you can log into the online
+9:49
+system learning management system to find out
+9:52
+the details. So there is a big advantage even though we have the the physical
+9:58
+classes and the many activities but this communication is a very very important
+10:04
+and uh uh efficient communication always improve the productivity of all the
+10:11
+parties. On the other hand,
+10:15
+uh now not only the communication, you may want to uh inform several things to
+10:22
+the several people. Uh especially uh you may wanted to inform some information.
+10:29
+uh for example as we can explain uh if you want if you are planning to apply
+10:34
+for an exam or if you are planning to select some courses and you may have to
+10:39
+inform to the respective staff in a particular department or maybe a
+10:44
+division like ex examination division and you don't know who are the the
+10:49
+relevant people. Sometimes you may physically go and will give those
+10:53
+information to the wrong person but then you may not be able to complete the
+10:59
+work. So there isn't a problem not only communicating communicating to the right
+11:04
+person. If it doesn't happen that will also create a big issue.
+11:09
+Therefore, it's uh very important that uh
+11:14
+uh we need to uh communicate the right information to the
+11:22
+right people and also the decisions taken by the administration or the
+11:27
+management uh should be communicated back to you on
+11:31
+time at the correct time. Otherwise um
+11:36
+there may be some kind of a gap in the communication
+11:41
+and it takes a lot of time to fill this gap. So it waste the resources of all
+11:48
+the parties. So the main uh benefit that we will get from a management
+11:54
+information system that will help us to keep a very good communication up to
+12:00
+date information we can get and uh also uh without uh physically going at any
+12:07
+time. Uh you can find out the information and also you
+12:12
+can inform your matters to the respective parties.
+12:17
+uh no need to wait until the offices are open at 8:00 in the morning. The MIS
+12:23
+management information system is available at any time. So you as
+12:30
+uh you like it whenever you can login into the systems and go.
+12:35
+So uh the MIS system what we built for the faculty is mainly to manage the
+12:43
+uh the courses uh and your registration and your
+12:48
+examination process and the results process those activities.
+12:53
+uh you may understand there are so many other administrative activities
+12:59
+uh in the uh faculty but we are have not considered all these things in this
+13:04
+system. We have considered specially uh the management of the courses,
+13:10
+examination process and the results process in this one. And this is a
+13:14
+different from the the learning management system uh that we have it uh
+13:20
+in the uh through the learning LMS. Hence um
+13:27
+uh uh the important thing that everyone needs a kind of a username and a
+13:34
+password to access the system and it is very uh unique to the person. Okay. So
+13:42
+whenever you access your account and uh uh usually
+13:48
+uh your privacy will be protected and you will get to know only your details.
+13:54
+you can't find out the other speeches and you can easily communicate to them.
+13:59
+So uh and that is the the main things that will be covered the
+14:05
+registration starting from the the very beginning. I mean the registration means
+14:10
+as you know that uh usually you have to register at the very first day at the
+14:15
+faculty and uh then every year you will have to register what we call the renew
+14:20
+your registration year registration first year second year third year and
+14:26
+then the fourth year and uh then as far as I understood uh first two and a half
+14:33
+years the the courses are compulsory but however the depending on uh uh your
+14:40
+performance and uh you can select the courses and specialization starting from
+14:45
+the third year second semester and where you can specialize different areas uh
+14:52
+before you graduate. So uh the semester every year has a two semesters. So that
+14:57
+is a semester 1 2 3 4 5 first five semesters are seems to be in a common
+15:02
+track for everyone and but semester 6 7 8 it's a specialized track and where you
+15:09
+can select some courses some courses are optional some courses are elective some
+15:15
+courses are compulsory so the compulsory things depends on your specialization
+15:21
+and uh elective and optionals are something that you had to collect based
+15:26
+on the conditions given. Uh so however it's a registration it's important
+15:32
+that's the one thing we are at the beginning people have to register so
+15:35
+that process we will uh integrate in this system so it's will
+15:42
+be easier as you will see the other biggest thing in the MIS system what we
+15:48
+provide here is uh before the exams you will have to apply for the exam
+15:55
+sometimes you may not apply for some exams due for some reasons and uh also
+16:01
+there are some conditions to be satisfied if you wanted to apply for
+16:05
+exams. The the main thing is your attendance will be considered by the the
+16:11
+respective department before granting the
+16:15
+um uh your uh permission to sit for the exam and
+16:21
+when you apply so the respective officials from the department will
+16:25
+decide and grant you the permission uh to sit for the exam. So all these things
+16:31
+you don't want to manually go now to the department and ask the department to
+16:36
+sign on a piece of paper and bring back to the exam division. You can make it
+16:41
+online. You can do all these activities online and that will be much more easier
+16:46
+and uh you can then without wasting the the time it
+16:51
+will be much more faster. If there is a matter still you need to discuss then
+16:55
+you know uh if for example if you didn't receive the approval you can communicate
+17:01
+only for those matters and don't want to go for other thing. So that's uh
+17:05
+applying for the exams uh you have to do it and once you apply the exam division
+17:12
+uh also we'll find very easy to uh prepare all the relevant uh arrangement
+17:18
+for the exam. As a result uh the downloading the um this uh admission uh
+17:27
+what we call the the um admission uh the papers uh for the exams that can be uh
+17:35
+they will facilitate easily and the other uh thing would be um where
+17:42
+people can do uh u well after the exams the biggest thing is people want to know
+17:48
+the results So the results may be up to now the
+17:51
+results will be published on the paper on the notice board but here once the
+17:56
+MIS is set up you can see you don't want to physically go to the uh to see the
+18:02
+results you can log into the system and you can see the results so some of the
+18:06
+the recently released results you can see that today uh when you log into the
+18:12
+system and uh but uh when you log in and uh through the learning management ment
+18:19
+system relevant officials can inform all of you okay results have been published
+18:24
+so then what you have to do it is it login into the MIS and go to your
+18:29
+relevant section and you can see what are your results exam results so and if
+18:33
+there is anything any matter that you wanted to inform if the results are not
+18:37
+correct other thing then you have to contact the respective uh s at the exam
+18:44
+division or the relevant head of the department with the the department or
+18:48
+the the dean of the faculty. So those are the other things which you have
+18:52
+still have to manually. So uh these are the and uh the whole
+18:58
+this process will help the administration to do lots of work more
+19:02
+efficiently. For example, issuing the letters and the issuing the certificates
+19:09
+and the transcripts those things the time could be reduced and the exam
+19:15
+division will find it very easy. So the the G benefit that you will get it uh
+19:19
+not like those days in a uh very short period of time the exam division will be
+19:26
+able to issue those letters transcript certificates uh not the degree
+19:30
+certificate degree certificate is in a different things but the other uh
+19:35
+relevant official documents they will be able to issue it in a uh faster way.
+19:41
+So those are the main advantages benefits that you will get from the this
+19:47
+management information systems established for the faculty. So today is
+19:52
+the first day that you will be given an access to the system. So we need to go
+19:58
+it. So I will demonstrate uh at the same time I would like to invite all of you
+20:05
+uh to login into the system uh with me because then I it's easier for me to
+20:11
+explain the things that you have to do. Okay. Uh but uh just to keep the the
+20:18
+bandwidth uh consumption for the online I'll keep the my video switch off. uh
+20:25
+but we'll come back but any problem any questions you can raise on the just chat
+20:31
+box and uh uh we have the the staff members also in the faculty who will
+20:38
+help and uh we can discuss any issues do not don't worry you can raise your hand
+20:45
+uh through the zoom and uh then you can ask those question both in English or
+20:50
+singular uh so I'm happy to answer those question So uh I will demonstrate at the
+20:57
+same time wanted you to try this out because this is much more easier and if
+21:04
+you can complete uh some of the activities with me then it's much
+21:09
+easier. uh so some uh because at the moment the
+21:14
+MIS uh is set up in a different ways. Therefore the first year students will
+21:20
+see in a different view. Second year students will be uh see in a different
+21:24
+view. third years will it it depends on the poses you have done uh the courses
+21:29
+you are going to do and uh the depending your student status the information
+21:34
+which is visible at the moment will vary from uh one group to another group so I
+21:41
+can see uh there are students from the different groups therefore they will
+21:47
+have to uh login based on it okay so let's start uh going through the system
+21:53
+uh and uh experience how it works. Uh so I will share the my screen now.
+22:03
+Uh okay. Uh you can see the screen.
+22:09
+Uh and to access this particular screen, give me a minute.
+22:19
+Yeah. uh you need to type this URL. So uh open
+22:28
+a uh window what we call the tab in your browser web browser and type this
+22:36
+address. Uh so this address is uh agree mis. So it may be too small. So let me
+22:45
+uh type that one in the kind of a small uh another window.
+23:03
+so hope that I'll put the URL and I'll make it larger.
+23:22
+Hope you can see. Uh please type this URL on your browser. Um even without
+23:29
+this is okay. You don't want to type the login. But if you just type https
+23:35
+col/ agree mis just the wordj.ac.
+23:43
+So you will have to keep this address. Uh yes. So it's also available on the
+23:50
+chat box. Uh uh thank you Kana and Mr. Shani. Uh so please type this one
+23:59
+uh on the
+24:04
+another box. So I'll give you a couple of minutes uh to do that one. So then if
+24:12
+things works properly, you should be able to come to this page.
+24:21
+Yeah. So no, I uh
+24:45
+so I I hope now you may have opened this page uh which is called the faculty of
+24:52
+agriculture, Rajarata University of Sri Lanka student portal. So this is the
+24:57
+address which you need to enter into the the MIS system as a student. Uh so uh
+25:05
+then you will have to type your registration number. So I hope everyone
+25:09
+knows their registration number and then need to type the password. Now the
+25:16
+registration number it's uh something I mean I'm trying a
+25:24
+number one of the person's number okay uh and
+25:29
+the I don't know whether the this uh maybe uh the relevant student may be
+25:34
+here but just for the I will try out and uh the password is remember it's your
+25:41
+NIC number okay uh password is your NIC number.
+25:49
+So the number that you have given when you register
+25:54
+uh for the faculty you will have to type. So please type your registration
+25:59
+number in this format and then you have to type this
+26:04
+your password. So I have put 2020 and uh 20 nu uh 19 uh these students. So should
+26:14
+be able to see once you do it press login.
+26:34
+Okay. I'll press the login. Okay. Uh I'm just showing the the
+26:41
+details of that one for one person. Uh once you log in, you should be able to
+26:48
+uh see a page like this.
+26:52
+Okay. Uh where you can see the the full name.
+26:58
+Okay. uh
+27:01
+and then uh you will see the the uh kind of an
+27:07
+initials and your surname will be here and those things you cannot change those
+27:13
+are defined by the system but you can see the full name in single uh this may
+27:21
+be very important uh because one day when you are graduating uh the
+27:26
+administration may want to know your name uh in singular or in Tamil. Okay.
+27:33
+So if you don't know uh you can use the Google translation uh
+27:39
+to get that one in Tamil if you want or you can type it that far whatever the
+27:44
+way uh but if you don't know you can just leave it that's no problem. Then uh
+27:49
+some of the fields you cannot change as you can see gender, ID, number you
+27:53
+cannot. But the important thing that you had to do it here you have to enter your
+27:59
+birthday. Okay. Uh and uh also uh for the examination purpose uh writing hand
+28:06
+whether you are right-handed or whether you are left-handed uh you have to
+28:11
+select this one. Okay. race, religion, citizenships,
+28:16
+uh citizenship by the two by descent and by registration
+28:21
+and the contact uh information uh your mobile number will be here but the LAN
+28:28
+number or your permanent mobile whatever the thing you have given at the
+28:31
+registration will remain it as it is but this number if it is different from this
+28:36
+one you better to change that one and then your email address already defined
+28:42
+But now suppose if some of these informations are wrong please note down
+28:48
+and you have to later contact uh uh Miss Kalpana at the uh examination
+28:55
+division and inform her in writing uh some wrong information so she will give
+29:01
+the relevant instruction to follow them and then u you will see on there
+29:07
+something called the the permanent address. So the permanent address
+29:11
+address 1 2 3 these are the whatever the details you have given when you are
+29:16
+registering uh but your present location may be
+29:22
+different but however contact address same as a permanent address you don't
+29:26
+want to type if you just click this one this will be automatically copied to the
+29:31
+other but if you wanted to change this one uh you have to toggle this one and
+29:37
+then please complete suppose you may In even though your permanent address may
+29:42
+be one thing but if you are staying in another place better to enter those
+29:45
+details and uh your district gramar division electorate MO these
+29:52
+informations are very important for the different administrative requirement.
+29:56
+Therefore kindly complete those information
+30:01
+uh as you like and and then you also father father mother guardian details
+30:08
+are very important. So you'll have to select one of them uh who is the your
+30:14
+the main contact person and then enter the the name, occupation,
+30:21
+uh workplace address, contact number, emergency contact details also you have
+30:27
+to put the uh someone's name maybe sometimes the name guardian details and
+30:34
+the phone number is very important and uh if possible uh also also enter the uh
+30:40
+Z code these things are what everything UGC has taken but uh UGC has not sent
+30:46
+you a level results and details for the statistical requirement that the faculty
+30:51
+needs these details and if you can you can better to fill these things this
+30:56
+part is not compulsory but kindly request you to do that one once you do
+31:00
+all these things you'll have to press uh update profile
+31:07
+yeah so uh let's start doing this one because in order to move to the the next
+31:13
+stage u you have everyone now this is the first day you are doing accessing
+31:19
+the uh my system of the faculty you have to complete this one okay so uh I will
+31:26
+log out uh assuming I don't know whether the person is there so then uh ah log
+31:32
+out is can be done that's also I have to say uh there isn't a small on the right
+31:38
+side top there is a button like the power button. If you click this one what
+31:43
+will happen? You will be automatically log out and you'll be come to the normal
+31:48
+starting point. Okay. So uh uh please uh so login into the system
+31:57
+and start doing that one because it's very important and at the same time uh
+32:03
+if you have now any question anything any technical problem if you are facing
+32:08
+uh please put that one into the chat box. uh we
+32:13
+will try to do uh we'll try to address those things and we'll give you the
+32:20
+overall guidance but if you have a very specific thing uh we can you can contact
+32:27
+as miss kalpana mentioned here uh you can send any queries related to your
+32:32
+information on MIS to the araggrt.ac.k Okay, this is in the chat box. She has
+32:39
+put in a message. Uh while please mention the subject as MIS uh in the top
+32:46
+of the mail on the subject line you'll have to say the MIS your registration
+32:51
+number by mentioning your giving the registration number. So and then in the
+32:57
+email you can write the more details. So please start now uh details. Yeah.
+33:05
+So I'll give us some time for you and meantime if you have any question please
+33:09
+use the chat box uh be happy to answer those question
+34:44
+uh if some people have some problem of starting the the page please uh post
+34:50
+them or raise your hand uh or tell verbally whatever the way we'll try to
+34:57
+look at the issue. Uh so you have to type your
+35:03
+once you logged in type the your registration number and then your
+35:07
+password. I can see more than
+36:08
+140 students are here. So, uh please log into the system.
+36:58
+some of the details if you don't know at the moment I'll suggest you to enter
+37:04
+some stars or some uh if you leave it blank there may be an
+37:12
+problem some of the details if you don't know later you have to inform these
+37:16
+things into the uh the relevant uh examination division but you can enter
+37:24
+uh some characters instead of that and you can save the your profile and go but
+37:29
+I suggest uh and I request all of you to enter the as much as possible the
+37:35
+correct information because that will help you as well as the administration
+37:41
+uh to use the system more productively and provide a better service to all of
+37:45
+you. Yeah.
+38:25
+At the same time, if there are some wrong information, if you observe in the
+38:29
+system, please note down them. And uh as mentioned, you can send an email to this
+38:36
+email address. AR agree. RJTac.lk
+38:41
+later and uh with all these details uh making the request so then you can
+38:47
+correct those information. So please feel free to ask any question
+38:54
+you can send in common or you can send directly.
+38:59
+If you have a question you can ask even in singular no problem. Okay. Uh
+39:15
+ah uh there wasn't a question. Thank you. Uh how to change the profile photo?
+39:20
+Yes, that is the first thing I just forget to I wanted to tell once you log
+39:24
+in first check whether it is your photo or someone else photo. Sometimes uh you
+39:29
+know uh it is possible uh mistakes could happen. Anyways, so if you wanted to
+39:35
+have a a wrong photo, then we'll have to immediately correct or if you don't like
+39:41
+the photo and you wanted to put in a different photo, whatever the reason,
+39:45
+then again you have to uh contact uh uh Miss Kalpana at uh exam division. Please
+39:54
+send the details to her uh with a new photo and reasons also you can tell and
+40:00
+inform. So uh it's uh it's the photo that you have submitted. It's not the
+40:06
+photo that taken by someone else. It is the photo you have given. But anyway, if
+40:11
+you have some reasons to change it, uh you can do so.
+40:53
+Okay. So that is the way. There was another question uh what to do if there
+40:59
+is a mistake is not in a editable column like in my case for the district it says
+41:06
+but I mean from candy. Okay that is very important. Now if you see this is uh
+41:11
+natural. If there is a a wrong information again note down
+41:16
+uh I mean if you are good enough you can take a screenshot and attach to the
+41:21
+email and send the email or you can just write your details and you can say the
+41:26
+the district mentioned here is in a kuna and you are from Candi and you just have
+41:32
+to uh u send that information to Miss Kalpana. important thing then you have
+41:38
+to send her some sort of a proof because uh we'll have to they will have to check
+41:44
+they may have considered this kurunagala based on your application for the
+41:48
+registration.
+41:49
+>> So in such a situation uh may be better to send an email and
+41:55
+meet if possible Miss Kalpana at the exam
+42:00
+someone want to ask a question or say something.
+42:04
+Uh yes we have used the district which they have already entered in the
+42:12
+GGC application.
+42:14
+>> Okay.
+42:14
+>> Yeah they have se for the A levels
+42:16
+>> A level. Yes. So that is the district. Yeah that is another thing I you are
+42:20
+correct because sometimes the people may be yeah current district may be
+42:24
+different but uh the district will have to consider the the district considered
+42:29
+for your A level resource for the university selection. That is the the
+42:34
+details here but uh that is that may not be your current district. Yes.
+42:40
+Uh Miss Kolkata in that case we can't change. Am I correct?
+42:49
+>> Yes. According to our records received by the GC
+42:52
+>> UGC will have to keep it. Now in this case you have to keep it this one as a
+42:57
+kurag not as a candy. If they wish they can send a letter then I will check.
+43:04
+>> Okay. Send a letter with some sort of an evidences. Okay. Maybe your copy of your
+43:10
+identity card or uh Ramadar certifying your address uh
+43:17
+some sort of an evidence. So then the administration will consider.
+43:22
+Please uh feel free to ask uh any question on the chat box. So you can ask
+43:29
+uh directly How many of you have finished now? Can
+44:07
+you raise your hand? Uh so then I know the the status. Okay.
+44:13
+One person has finished. Please uh raise your hand if you have finished the
+44:18
+thing. Okay. Another question madam can I change my land
+44:25
+phone number in the MIS? Uh yes you can. You again you will have to send those
+44:30
+details uh to the uh through the email or try to meet Miss Kalpana at the exam.
+44:39
+Uh then should I fill the other blanks regarding the GSA
+44:44
+emoj or where I live?
+44:49
+Uh
+44:52
+>> uh
+44:52
+>> Miss Kalpana are you you better to suggest the answer?
+44:56
+>> Uh for that you can use the actual GS division, MO and
+45:03
+>> that may be no. Yeah. But u if the student can provide the some
+45:09
+evidences and the proof then you can consider changing it to candy and the
+45:14
+other thing.
+45:16
+>> Yes.
+45:16
+>> Yeah. Okay. Uh dear students if you have any problem on changing the defined
+45:22
+columns please send me an email mentioning the in the subject as MIS and
+45:27
+your registration number.
+45:29
+>> Okay.
+45:29
+>> If it is ei the address or phone number anything you can send me.
+45:34
+>> Yeah. So that is the fastest way rather than physically going and meeting the
+45:38
+people. Uh better to send the uh now there was another question asking how my
+45:44
+permanent address is wrong. It is my temporary one. What can I do? Just uh uh
+45:50
+send an email uh with this uh this is your permanent address. Uh uh the
+45:55
+temporary address is the other one. But then you can put the temporary address
+46:00
+and uh just info. Okay. I can see 11 people have now finished.
+46:08
+I'm still waiting until I complete. This is a good exercise uh to all of you
+46:17
+in the workshop. Uh
+46:22
+once you finished raise your hand. So I keep some sort of account there.
+46:53
+Okay. 16 people have completed. Now we have
+46:59
+more than 100. Take your time. These informations are
+47:05
+very important. So carefully type that one. No problem.
+48:13
+18. I'll give a more time because
+49:04
+still small number. So that's okay. Take your time.
+49:30
+Those who have finished they can see the once
+49:45
+they will be taken into a new page. You can click and see uh sometimes depending
+49:50
+on the year you can see your exam results. You can just click the the
+49:56
+buttons that appears on the left side on the page.
+50:00
+Okay, those who finished others take the time carefully type it
+50:06
+uh and those information and uh
+50:12
+there is a no time. This is uh although something that you should do it
+50:16
+carefully and fill all the information correctly.
+50:26
+Once I finish speaking, how can I change the details again? Sir, if I want
+50:32
+uh usually
+50:36
+if you wanted to change your details again,
+50:40
+uh some of the things if you are not sure and if you wanted to correct them,
+50:45
+you have to send in a information through an email to S
+50:51
+because uh you cannot do that one. H remember that's what I asked you uh you
+50:59
+have to get a permission from the S to do so yeah
+51:05
+okay you can change but uh you need to get a permission so usually uh um that's
+51:15
+the way how we have designed because uh otherwise administration will find it
+51:20
+very difficult if the information keep on changing
+51:24
+So you need to get the appointment. Oh. Uh there was an matter
+51:38
+uh how do I change when someone else photo came to me in my picture profile
+51:44
+in the Oh, I see it is it's a mistakes. Very sorry for it. uh uh definitely uh
+51:51
+please either send in an email uh to the given address to S
+51:57
+uh Miss Kalpana and uh with our leaders and if possible attach your photo we
+52:04
+will definitely correct uh these things happens you know when we develop in a
+52:08
+system and charge uh that problem could happen
+52:14
+so uh it's important to change
+52:20
+picture. uh
+52:43
+well we have put in a default password as
+52:48
+your NIC. Okay,
+52:53
+this is the one reason that even we are not letting people to come back and
+52:57
+change it. uh you cannot change your the password.
+53:03
+However, due to some reasons if you wanted to change your password
+53:08
+uh please contact Miss Karpana and uh uh make a request.
+53:14
+So we will given a new password in that case if there is in a reason uh because
+53:20
+not like in the your learning management system uh we are using a kind of a fixed
+53:27
+password the password is an NIC number but yes of course it can be changed by
+53:33
+the administration not by What's up? If the photo doesn't appear again uh you
+54:37
+better to uh send an email and possible if possible attach a photo uh together
+54:44
+with get a copy of your identity card.
+54:50
+So the administration will correct correct that part. So later
+54:56
+they be let into that method. So 33 people have finished now.
+55:22
+I'm waiting two more minutes. Okay, thank you. Miss Kalpana has posted
+56:43
+the instruction on the chat box. Uh if you wanted to change your photo, uh how
+56:50
+to do that one, uh you have to take the relevant JPEG file and name the file
+56:55
+name and with the NIC number. Uh so you have to send those pictures to them.
+57:03
+Okay. Thank you. Uh there is an
+58:11
+uh another similar question how to change my district it says Mallay but I
+58:17
+am from Candi. Yeah, this uh the reason for that is uh uh the UGC information
+58:27
+says it is mal maybe sometimes uh because uh uh depending on the school
+58:33
+where you set for the I advanc level that has been recorded here. However, if
+58:40
+you can send the the details with some evidences that you are now in candy that
+58:46
+could be changed. So please send those details as instructed earlier to the uh
+58:52
+AR is AR at the uh exam division scalpana with the heading MIS and your
+59:02
+name. Uh you better to send some evidences also otherwise she can't do
+59:08
+that one if there is an evidence. uh for example if you can send your copy of NIC
+59:17
+and uh letter from Giladari or some other evidence to prove your current
+59:22
+district then that could be done. Okay, 38 people have completed now.
+1:01:22
+Okay, now number is 44. We will wait for it since we have more than 100 students
+1:01:28
+here. Okay, I got some more question. Uh let
+1:06:01
+me answer them. Uh uh one thing is sir should I should be
+1:06:09
+adding English or general knowledge test uh results of our exam results. I could
+1:06:15
+not add those two. I did I add only main three subjects results only should be an
+1:06:23
+English general knowledge test exam results. I could not add those two.
+1:06:29
+and only the main three subjects results only Miss Kalpana this main three
+1:06:34
+subjects results is enough no am I correct
+1:06:38
+>> uh yes for some other purposes only we have included those that can be option
+1:06:43
+>> also yeah okay yes when I when I give save update it always
+1:06:50
+says 500 server what should I do anatika Let's see.
+1:07:13
+Survey error. Can I
+1:07:19
+I will check from the this side your issue.
+1:07:24
+Uh can you just type in a direct message of your username?
+1:07:30
+uh not in the public that uh uh if you got a 500 server error, it means
+1:07:52
+your internet connection has some sort of a problem. So you have to try it
+1:07:57
+again. Okay. Uh, but I will check this one.
+1:08:25
+Don't send. Yes. Tell me.
+1:10:10
+uh sorry if you try to do this one using the the mobile phone if you try to
+1:10:16
+update the profile there may be a problem so I suggest you to use a normal
+1:10:21
+computer and a browser to do this one at the moment if you don't have such a
+1:10:26
+facility don't be hurry you can Take the time. You can do it uh whenever you find
+1:10:33
+the computer and a good internet connection. Please try that one. Okay.
+1:10:39
+Uh then uh what I want to do now
+1:10:50
+I will uh try some papers. Okay. Uh I can see it. Uh now uh looks
+1:11:28
+like more than 50 people have completed. I have randomly selected the one of you
+1:11:33
+uh just for the demonstration. Uh let me uh try that one uh with someone who has
+1:11:39
+completed. Um
+1:11:44
+I selected an account just for the
+1:11:48
+demonstration. So uh you have to put the number. So I
+1:11:53
+am uh putting the number of a a person uh who already uh have completed now. Uh
+1:12:03
+so what will happen? Yeah. So uh if you completed if you submitted your profile
+1:12:10
+you can see like this. Okay. And uh if you click it again the profile
+1:12:18
+uh anytime you can come to this page. This is the starting page. You can see
+1:12:23
+uh your basic information uh ID, number, gender and those things.
+1:12:28
+If there is anything that you want to modify, you have to contact. But the
+1:12:33
+most important thing, so once you come to this page uh you can see some of the
+1:12:38
+things uh on the left side. What are these things? First one is exam results.
+1:12:45
+So depending on if you have done some exams if the results have been released
+1:12:50
+you can click this one to see your results. Okay. And also your past
+1:12:56
+results anytime you can see them. Okay. So uh uh that is
+1:13:04
+the the one of the key benefit that you will get. You can check your results at
+1:13:09
+any time login into the LMS and if they have been released until you completely
+1:13:14
+pass out from the the faculty uh you are resource semester wise you will be able
+1:13:21
+to see now uh uh I hope uh you will be okay if I click
+1:13:29
+the exam results one nothing comes here because uh no results have been released
+1:13:34
+so far so it is not the fold. So sometimes you may have done the exams or
+1:13:40
+you may not have done the exams but uh uh the if there is a blank it means uh
+1:13:48
+the no results still pending. So once the results are released what will
+1:13:53
+happen? Uh the administrative staff will put in a message on the LMS site news
+1:14:01
+and then you know the visas has been released. then you have to come here and
+1:14:05
+you can check the results. I'll later demonstrate to uh with another
+1:14:09
+application how it can be done. Uh let me let me try someone else
+1:14:15
+not from this batch. Uh
+1:14:26
+>> so for the 2020 batch they don't have any results.
+1:14:30
+>> Any results? Yes. Yes. That's the thing.
+1:14:32
+>> They recently had the exam.
+1:14:34
+>> They recently had and uh let me check the participants
+1:14:41
+2000. Anyone from 2000?
+1:15:00
+>> 2019. and it one semester is available
+1:15:04
+>> available but I'm trying to locate someone within 2019 batch who has
+1:15:09
+completed the profile.
+1:15:13
+>> Okay.
+1:15:13
+>> Uh 20 2000
+1:15:46
+out of there. Do you know anyone who has uh completed?
+1:16:31
+Okay, she has also not done that one. So we can't see the results. Anyone who
+1:16:38
+have done 2019 patch
+1:16:40
+>> who has completed is are there 2019 student here?
+1:16:47
+>> All of them are in 2020 patch.
+1:16:51
+>> So there are several students uh 1985.
+1:16:57
+>> Can we ask him to
+1:17:00
+>> uh they can say the number? Uh I mean if you can send the chat box so I can log
+1:17:07
+in. Yeah. Um,
+1:17:48
+wait a second.
+1:17:50
+>> Um, sir, I have send a chat. You can try that numbers.
+1:17:54
+>> Okay. Uh,
+1:17:59
+thank you. I'll try that one. Thank you.
+1:18:13
+Thank you. Okay. Okay. Let's log in. Okay. So, uh
+1:18:21
+she has completed. So, let me click. I hope she don't mind. We are just
+1:18:28
+showing. So, once you click, you will be able to see the results. Semester one
+1:18:33
+resource are there. Semeister 2 I semester 4. So if there are other
+1:18:37
+semesters 1 2 3 4
+1:18:40
+>> the three resource is still pending
+1:18:42
+>> pending. Okay. So once it is released it will come. So in the future so if you
+1:18:47
+click the one you can see the the results. So again if you better to check
+1:18:52
+that and if there are some uh results if you think that's wrong it's not the
+1:18:56
+correct the other thing you can contact uh scalpana you can send the details. So
+1:19:02
+the likewise so this resource will be available at any time you don't want to
+1:19:07
+forget about it's always officially appears through the LMS. So uh this is
+1:19:12
+how so uh so as you go on your study program first year, second year, third
+1:19:19
+year, fourth year. So all the results at any time you can get in a print out you
+1:19:24
+can see the your results uh uh whatever the your achievements will be recorded
+1:19:29
+there you can see and it's a very private and private you. So this is the
+1:19:34
+way how the results will be published in the future and this is the way how you
+1:19:40
+will get to know the results. So the the first year students uh who are waiting
+1:19:44
+for the results. So your results uh will be released in this way. So the semester
+1:19:49
+one results when it comes it will be listed like this. Okay. So uh that is uh
+1:19:55
+how it works and the exam results and uh then we go to the the other the other
+1:20:03
+important three things are semester registration apply for specialization
+1:20:09
+exam application. Now uh I'll start with a semester registration. So if you click
+1:20:16
+this one uh right now uh nothing to worry because the semester registration
+1:20:23
+has not yet started. So usually at uh this is uh not in a case for the first
+1:20:30
+year second year and also third year first semester that means the semester 1
+1:20:35
+2 3 4 5 uh semester registration is not required. Am I correct malpa?
+1:20:43
+Uh yes,
+1:20:45
+>> this semester registration comes once you activate it. No.
+1:20:50
+>> Uh yes, I I'm activating.
+1:20:52
+>> You have to activate that.
+1:20:54
+>> I have already activated this.
+1:20:56
+>> Okay. If you could activate uh that one then it's easier. We can demonstrate.
+1:21:02
+>> Uh yeah, you have to activate. Uh yeah. So it just uh she will activate um
+1:21:10
+and then uh
+1:21:15
+uh I'll come to this one later. Okay. Yeah.
+1:21:23
+>> So it has been already activated.
+1:21:25
+>> Uh wait a second. I'll refresh it. Shall we try with another student's
+1:21:34
+number? Uh-huh.
+1:22:11
+Carbon if you could give me a kind of a number then it's easier if you know the
+1:22:16
+the one where you have activated uh otherwise I can search it and
+1:22:23
+>> uh for this number I'll change the year registration also Okay.
+1:22:39
+>> So now for the
+1:22:41
+>> uh let me
+1:22:42
+>> your four she
+1:22:44
+>> Okay.
+1:22:48
+>> Is it working now sir? examation
+1:22:57
+subject. Try someone else.
+1:23:46
+So is it working now? Okay.
+1:23:52
+Uh yeah. S registration. No. Yeah. Uh so this is uh uh semester
+1:24:02
+registration usually counts for the compulsory subjects, elective subjects,
+1:24:08
+audit subjects. But still uh uh those
+1:24:12
+>> she is in 31 s 32 subjects are enabled.
+1:24:16
+>> Uh I think we can go for another batch s.
+1:24:20
+>> Shall shall I go for another batch?
+1:24:22
+>> Yes sir.
+1:24:23
+>> That may be better. less than 19 or 20.
+1:24:27
+>> Yeah, let's uh let me uh log out and uh what should be the number
+1:24:37
+>> what about 1819 batch? Uh yeah they can they don't have specialization
+1:24:44
+>> any number
+1:24:45
+>> okay
+1:24:46
+>> center number in that ban
+1:25:02
+is this uh uh 2019 one
+1:25:06
+>> what you have in the chat book chat box. Yeah.
+1:25:09
+>> Okay. Uh
+1:25:11
+>> 2019.
+1:25:12
+>> 2019. Okay.
+1:25:16
+>> Uh may know the last number is
+1:25:20
+>> 085.
+1:25:21
+>> 85. Okay, thank you. Let me see.
+1:25:54
+I think uh this
+1:26:16
+I got the uh That's it. See whether this works.
+1:26:41
+Oh, she has not logged in. That is the
+1:26:45
+issue. Then we can't show this one.
+1:26:56
+Someone who has completed in 2019 best right now.
+1:27:01
+No one I can't see here. All the 2020 best. Am I correct? Uh
+1:27:19
+Uh student is there any 2019 batch who have update their profile?
+1:27:24
+Update your profile. Oh, shall we do this way? I'll I'll uh
+1:27:46
+use a random uh someone's uh
+1:27:50
+>> uh
+1:27:52
+>> Yeah,
+1:27:52
+>> please try and I'll send a chat. Yeah, through the present
+1:28:02
+>> for the
+1:28:04
+>> Okay.
+1:28:05
+>> Second year registration. Okay.
+1:28:22
+Okay. Thank you. Uh so here uh so once you see the exam results definitely as
+1:28:29
+you know that is not there but when you take the semester
+1:28:33
+registration but this number is in Uh Kalpam is also
+1:28:56
+from uh 2020.
+1:28:59
+>> Yes. 2020.
+1:29:01
+>> But you have to get it someone from the 2019
+1:29:07
+>> for he them also sir. Next semester is enabled already.
+1:29:12
+>> Already enabled. But uh shall we try uh 2000?
+1:29:35
+Could you please refresh it? Not good.
+1:30:24
+What? Uh, wait a second.
+1:31:43
+I think uh semester registration it's not working looks like malpra
+1:31:53
+I'll check sir so uh the 31 students shall
+1:31:58
+>> uh
+1:31:59
+>> shall we check the uh 18 batch then
+1:32:03
+>> which batch you mean? Uh 2,00
+1:32:06
+>> uh age 2018 153 please sir then I'll adjust
+1:32:16
+>> if you just put in a number there again I I can try and see
+1:32:24
+>> because there are no 19 batch students
+1:32:27
+>> students are here. Yeah. Yeah. Yeah. Kalpana but uh I'll try to log in but uh
+1:33:03
+semester registration uh
+1:33:08
+>> uh so for the specialization registration is only available for that
+1:33:13
+>> only available no for this this student am I correct uh
+1:33:16
+>> yes sir
+1:33:17
+>> yeah so apply for the specialization to continue your program you should have
+1:33:22
+the uh this is actually happens in the third year in the second semester before
+1:33:28
+you go uh you have to select uh your preference. Okay, the preference
+1:33:34
+uh if you select this one say the department of agriculture engineering
+1:33:38
+and soil science specialization module. Uh this is uh you have to select one of
+1:33:45
+them your first preference, second preference, third preference. So uh
+1:33:49
+there are how many uh you can see specialization modules agriculture
+1:33:54
+>> specializations
+1:33:55
+>> yeah environmental soil management agriculture economics and extension
+1:33:59
+agriculture systems and management animal production and technology food
+1:34:04
+and uh agriculture biology crop uh so among them uh you can select only three.
+1:34:11
+So please that's what it says to continue your program you should select
+1:34:16
+uh please select the three specialization you wish to follow and
+1:34:19
+give the preference order to your choice. So uh let's assume it you select
+1:34:23
+the one uh then you can select this one uh then again uh if you say one then
+1:34:30
+there will be a problem with this one. So you'll have to select two and uh you
+1:34:34
+can select only three and here you have to definitely select three. uh if you
+1:34:39
+select two this two is gone okay so then this becomes three I'm not uh submit the
+1:34:45
+request because this otherwise this will create a problem for this student so uh
+1:34:50
+but uh she uh can do this one uh when it is uh come and submit then the
+1:34:56
+information will go to the the respective uh the selection process and
+1:35:01
+then based on the GPA uh and the performance and based on the application
+1:35:08
+the selection will be done and the results will be published. So uh that is
+1:35:13
+the way how it will happen in the apply for the specialization semester
+1:35:18
+registration. Uh unfortunately we can't show this one. So uh when you click this
+1:35:24
+one uh you will be able to see the subjects which you can select. Okay. and
+1:35:29
+then uh at the very beginning of the year and uh you can register for them
+1:35:34
+especially this comes in the third year uh and uh uh first year second year
+1:35:41
+until the first five semesters the you may have to register every subject you
+1:35:46
+can't select you can't deselect the subjects everything will be have to uh
+1:35:50
+compulsory for all of you and when we go for the exam that is the most important
+1:35:55
+thing as you can see uh this student the depending on your performance and uh
+1:36:01
+your current year of study uh she can register. So she can't register now for
+1:36:08
+the semester 1 exams may be not available or she may have completed due
+1:36:12
+to some reasons but semester 2 exams uh when they are ready you through the LMS
+1:36:18
+you may get a message but uh whence they are ready you can select now here
+1:36:25
+semester 2 if you select uh it's nothing there semester 4
+1:36:33
+>> semester 5 is available resources some sort of a thing. Shall we
+1:36:51
+try konamis someone someone else number uh someone uh in the first year student
+1:36:59
+uh 2020 they can am I correct
+1:37:17
+See now
+1:37:37
+give me one minute. Uh I will check the thing from the my side.
+1:38:19
+carp can you uh
+1:38:23
+>> uh yes I'm go through it sir
+1:38:26
+>> you have to activate I think uh
+1:38:30
+>> it was already activated and now I am activating all the registrations now
+1:38:35
+>> okay
+1:38:36
+>> the relevant one already activated but it's
+1:38:52
+Sorry if So now all the semesterers almost
+1:39:30
+accurate. It's
+1:39:32
+>> all the semesterers. Give me one minute. Okay.
+1:40:00
+Uh so we'll go to the we'll we'll try any
+1:40:06
+number. Uh
+1:40:18
+yeah, let me try a one student with the ID number.
+1:40:36
+Okay. Okay. So, uh this is the the student uh
+1:40:42
+and uh so when you click this uh one exam application you can see as I show
+1:40:51
+you earlier semester 1 and semester 2 and once you click the semester 1 you
+1:40:56
+can see these are the subjects that you in the semester 1 exams you are supposed
+1:41:02
+to do. So usually all of these courses are you have to do uh but due to some
+1:41:08
+reasons if you have not followed or if you are not going to do the exams you
+1:41:13
+have to deselect otherwise uh you can select as you like. So uh the depending
+1:41:20
+on the courses for which you have followed and uh you want to do. So
+1:41:26
+usually uh you have to select them like this but temporary I will select and you
+1:41:32
+have to register them. Okay. And uh once you put it registration
+1:41:38
+uh you can see another one. So that is semester one is the one you submitted.
+1:41:43
+Now you have applied for the semester 1 exam. So approved subjects once you
+1:41:47
+click nothing here because the reason uh now
+1:41:53
+you have applied but the department will have to approve your application
+1:42:00
+depending on your attendance. So once they approved attendance then uh you can
+1:42:06
+see the subjects uh which will be available. So right now uh we may not be
+1:42:12
+able to see anything because uh approval has not given by the any department. We
+1:42:17
+just apply. Okay. So nothing to worried about it. But uh once it is approved you
+1:42:24
+will be able to see. So this is the examination process how you apply for
+1:42:29
+the exams. Okay. Uh which you will have to do the at the the very beginning.
+1:42:35
+Yeah. uh so uh exam applications uh works like that. Uh I think uh Miss
+1:42:44
+Kalpana those are the main things we'll have to explain. Am I correct?
+1:42:49
+>> Uh
+1:42:50
+>> what are any other things that uh you wanted to explain profile exam results
+1:42:57
+semester registration exam application.
+1:43:01
+>> Yes. those main areas
+1:43:03
+>> those are the main things but uh uh in the future I mean this is the the kind
+1:43:08
+of a system where you will have to log in to apply for the exam apply for the
+1:43:13
+courses in the semester apply for a specialization
+1:43:17
+exam application and also most important see the results uh so right now there is
+1:43:24
+nothing so once the resource is there so this shows the profile so your main
+1:43:29
+contact point other thing but here if you want to make any changes uh you have
+1:43:34
+to uh contact the uh administration uh if you want if there is something that
+1:43:40
+you want to really change. Okay. Uh so uh those are the things that we will
+1:43:47
+cover today but if you have any question please feel free to ask from the chat
+1:43:53
+box or uh you can unmute and ask the question
+1:43:58
+directly in English or singular whatever. So we will explain to you.
+1:44:10
+I will un select. Okay.
+1:44:24
+You have any question please ask. Don't worry.
+1:44:33
+I will open the chat. Anything which is not clear which you
+1:45:02
+wanted to clarify again you can put it into the chat box or you can directly
+1:45:09
+verbally ask the question. H Uh students please feel free to ask
+1:45:35
+questions since for the next application process we we will start from this
+1:45:41
+system. So if you have any clarifications please ask.
+1:45:45
+>> Yeah. Okay. Uh with that then uh shall we
+1:46:16
+finish the the today's session? Uh we will also share the recording of this uh
+1:46:23
+session. I will edit it then we'll create a small uh videos uh of how to
+1:46:29
+register how to uh identify the the semester and uh those information. So
+1:46:36
+those video clips will be available through the LMS. So anytime you can go
+1:46:41
+through those clips and see how you can use the MIS in the future for your
+1:46:48
+academic activities and also administration
+1:46:51
+uh to apply exams, apply, register for the semester, see the results and uh uh
+1:46:58
+okay yeah with that uh we'll finish it and thank
+1:47:05
+you very much for the participation. I will hand it over to the um
+1:47:11
+>> yes
+1:47:12
+>> the staff at here uh Miss Shani or
+1:47:17
+>> okay sir thank you very much sir sir from our side from on behalf of dean and
+1:47:23
+the uh professor abhing the grant coordinate I also want to say thank you
+1:47:28
+for delivering the today's session so thereby and at this at the same time I
+1:47:34
+want to say thank you for all all members who supported us to establish
+1:47:38
+this management information system for the first time to the faculty and the
+1:47:44
+first and the most important one is the professor Hwagami as you could see
+1:47:49
+already. So he established the system for us and uh so he did a he he and his
+1:47:55
+team did a wonderful job. So now the in our faculty we now we are having a
+1:48:01
+management information system and as the professor he already explained to us by
+1:48:08
+reducing the paperwork you can always see your results and update your
+1:48:13
+profiles and numerous advantages you can gain from this management information
+1:48:19
+system. So uh as a faculty on behalf of dean and the administration staff and uh
+1:48:26
+on behalf of computer units so we we are on and also on behalf of students I have
+1:48:31
+to say thank you very much sir and for your team for supporting us to establish
+1:48:36
+this system to our faculty. In addition I also want to say thank you to our dean
+1:48:43
+of the faculty although he is not available here today. So he guided us so
+1:48:48
+well on on behalf of establishing this management information system. So uh
+1:48:55
+professor dikari and also the professor binger as the grant coordinator of the
+1:49:00
+ahead faculty DP and their guidance for establishing this system. We have to say
+1:49:06
+thank you for both of them and also uh without having a dedicated work came
+1:49:12
+from the the Malpa and and have staff from the dean's
+1:49:18
+office. So I think this the establishing this management system is not so
+1:49:22
+feasible and also therefore the the service rendered by Mr. Mrs. Kala
+1:49:28
+Natipar as faculty assistant registr faculty assistant registra and also the
+1:49:34
+service rendered by the Mrs. Shani Somaratna from IT unit of the faculty.
+1:49:40
+Both of you and your member staff members did a wonderful job to establish
+1:49:45
+the management information system to our faculty and at the same time without the
+1:49:51
+monetary support came from the ahead ahead grant uh this may not be a
+1:49:57
+feasible one at the faculty. So therefore the all members who supported
+1:50:02
+us to win this grant and as well as the continue to this continue the activities
+1:50:08
+under this ahead project faculty DP. So all the members who involved with the
+1:50:14
+ahead activities I have to say thank you very much. And finally last but not
+1:50:20
+least the students who who join with us today for this awareness session. All
+1:50:26
+all of you are uh the we have to say thank you very much and I also as a
+1:50:31
+faculty we are expecting out of this management system in future you are
+1:50:36
+gaining a good the means the good advantage maximum advantage out of this
+1:50:42
+system because we spend large sum of money to establish to have this facility
+1:50:48
+to the faculty. So as students you have a big responsibility to take the maximum
+1:50:53
+advantage out of this system. So finally thank you very much sir and thank you
+1:50:58
+very much Mrs. Zani and Mrs. Kalpaniparan
+1:51:01
+and students. So I wishing you a pleasant evening. Thank you very much
+1:51:06
+for all.
+1:51:09
+>> Thank you very much Dr. Udini and uh thank you very much for all of you. So
+1:51:14
+we can finish the session now.
+1:51:16
+>> Okay sir. Thank you.
+1:51:17
+>> Okay sir. Thank you. Thank you.
+1:51:19
+>> Thank you very much, sir, for your support as a M stakeholder this.
+1:51:24
+>> Thank you all for the best.
+1:51:25
+>> You're welcome.
+1:51:26
+>> Yeah.
