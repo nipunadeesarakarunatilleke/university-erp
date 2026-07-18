@@ -12,7 +12,7 @@
     background: #eef1f6;
     padding: 28px;
     color: #1a1a2e;
-    min-width: 1100px;
+    min-width: 1440px;
   }
 
   /* ── Page header ───────────────────────────────────────────── */
@@ -40,7 +40,7 @@
 
   /* ── Downward connectors (nginx → services) ────────────────── */
   .connectors-down {
-    display: grid; grid-template-columns: repeat(6, 1fr);
+    display: grid; grid-template-columns: repeat(8, 1fr);
     height: 32px;
   }
   .connectors-down .line {
@@ -53,9 +53,24 @@
   .connectors-down .line::after {
     content: '▼'; font-size: 10px; color: #99aabb; line-height: 1;
   }
+  .connectors-down .line.planned::before {
+    background: repeating-linear-gradient(to bottom, #c7cdd6 0 4px, transparent 4px 8px);
+  }
+  .connectors-down .line.planned::after { color: #c7cdd6; content: '⋯'; }
 
   /* ── Service cards grid ────────────────────────────────────── */
-  .services-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .services-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+
+  .svc-card.planned {
+    opacity: .72;
+    border: 2px dashed #aab2bf;
+    box-shadow: none;
+  }
+  .svc-card.planned .svc-header { background: #8b93a3; }
+  .svc-card.planned .not-built-note {
+    margin-top: 8px; padding: 5px 6px; background: #f0f1f4; border-radius: 5px;
+    font-size: 9.5px; color: #6b7280; line-height: 1.35; font-style: italic;
+  }
 
   .svc-card {
     background: #fff; border-radius: 10px; overflow: hidden;
@@ -92,10 +107,12 @@
   .result-bg       { background: #a855f7; }
   .transcript-bg   { background: #14b8a6; }
   .notification-bg { background: #ef4444; }
+  .course-bg       { background: #8b93a3; }
+  .reporting-bg    { background: #8b93a3; }
 
   /* ── Downward connectors (services → MongoDB) ──────────────── */
   .connectors-to-db {
-    display: grid; grid-template-columns: repeat(6, 1fr);
+    display: grid; grid-template-columns: repeat(8, 1fr);
     height: 32px;
   }
   .connectors-to-db .dbline {
@@ -108,9 +125,13 @@
   .connectors-to-db .dbline::after {
     content: '▼'; font-size: 10px; color: #47a248; line-height: 1;
   }
+  .connectors-to-db .dbline.planned::before {
+    background: repeating-linear-gradient(to bottom, #c7cdd6 0 4px, transparent 4px 8px);
+  }
+  .connectors-to-db .dbline.planned::after { color: #c7cdd6; content: '⋯'; }
 
   /* ── MongoDB grid ──────────────────────────────────────────── */
-  .mongo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .mongo-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
   .mongo-card {
     background: #fff; border: 2px solid #47a248; border-radius: 10px;
     padding: 10px 8px; text-align: center;
@@ -121,6 +142,11 @@
   .mongo-icon    { font-size: 22px; display: block; margin-bottom: 3px; }
   .mongo-db-name { font-size: 11px; font-weight: 700; color: #2d7a30; }
   .mongo-svc     { font-size: 10px; color: #888; margin-top: 1px; }
+
+  .mongo-card.planned {
+    border: 2px dashed #aab2bf; box-shadow: none; opacity: .72;
+  }
+  .mongo-card.planned .mongo-db-name { color: #6b7280; }
 
   /* ── REST panel ────────────────────────────────────────────── */
   .rest-panel {
@@ -245,12 +271,13 @@
 <div class="connectors-down">
   <div class="line"></div><div class="line"></div><div class="line"></div>
   <div class="line"></div><div class="line"></div><div class="line"></div>
+  <div class="line planned"></div><div class="line planned"></div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════════ -->
 <!-- LAYER 2 — Microservices                                           -->
 <!-- ══════════════════════════════════════════════════════════════════ -->
-<div class="layer-label">Microservices Layer — 6 independently deployable services</div>
+<div class="layer-label">Microservices Layer — 8 services designed &nbsp;·&nbsp; 6 built &amp; running &nbsp;·&nbsp; 2 planned (not implemented)</div>
 <div class="services-grid">
 
   <!-- Auth -->
@@ -377,6 +404,33 @@
     </div>
   </div>
 
+  <!-- Course (planned, not built) -->
+  <div class="svc-card planned">
+    <div class="svc-header course-bg">Course Service<small>:3002 · planned</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Designed Routes</div>
+      <span class="chip">POST /courses</span>
+      <span class="chip">GET /courses/:id</span>
+      <span class="chip">POST /:id/modules</span>
+      <div class="sec-lbl">Designed Models</div>
+      <span class="chip">Course.js · Module.js</span>
+      <div class="not-built-note">Not present in services/ or docker-compose.yml — defined only in Architecture Design Document &amp; API Endpoint Design.</div>
+    </div>
+  </div>
+
+  <!-- Reporting (planned, not built) -->
+  <div class="svc-card planned">
+    <div class="svc-header reporting-bg">Reporting Service<small>:3008 · planned</small></div>
+    <div class="svc-body">
+      <div class="sec-lbl">Designed Routes</div>
+      <span class="chip">GET /reports/summary</span>
+      <span class="chip">GET /reports/exam/:id</span>
+      <div class="sec-lbl">Designed Kafka</div>
+      <span class="chip consumer">◀ Would consume result.published</span>
+      <div class="not-built-note">Not present in services/ or docker-compose.yml — defined only in Architecture Design Document &amp; API Endpoint Design.</div>
+    </div>
+  </div>
+
 </div><!-- /services-grid -->
 
 <!-- ══════════════════════════════════════════════════════════════════ -->
@@ -409,6 +463,7 @@
 <div class="connectors-to-db" style="margin-top:14px">
   <div class="dbline"></div><div class="dbline"></div><div class="dbline"></div>
   <div class="dbline"></div><div class="dbline"></div><div class="dbline"></div>
+  <div class="dbline planned"></div><div class="dbline planned"></div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════════ -->
@@ -445,6 +500,16 @@
     <span class="mongo-icon">🗄️</span>
     <div class="mongo-db-name">notif_db</div>
     <div class="mongo-svc">Notification Service</div>
+  </div>
+  <div class="mongo-card planned">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">courses_db</div>
+    <div class="mongo-svc">Course Service · planned</div>
+  </div>
+  <div class="mongo-card planned">
+    <span class="mongo-icon">🗄️</span>
+    <div class="mongo-db-name">reports_db</div>
+    <div class="mongo-svc">Reporting Service · planned</div>
   </div>
 </div>
 
@@ -571,6 +636,7 @@
   <div class="leg-item"><div class="leg-dot" style="background:#fff8e1;border:1px solid #e6c900"></div> Kafka Producer</div>
   <div class="leg-item"><div class="leg-dot" style="background:#e3f6fb;border:1px solid #7ec8d8"></div> Kafka Consumer</div>
   <div class="leg-item"><div class="leg-dot" style="background:#e8f0fe;border:1px solid #4a90d9"></div> Sync REST call</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#fff;border:2px dashed #aab2bf"></div> Planned — designed but not built</div>
 </div>
 
 </body>
