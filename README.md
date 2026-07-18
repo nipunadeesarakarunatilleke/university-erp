@@ -53,6 +53,8 @@ The system is decomposed into 6 independently deployable services, each owning i
 | **Transcript Service** | 3005 | transcripts_db | Cross-service aggregation of student + result data into transcript JSON |
 | **Notification Service** | 3006 | notif_db | Kafka consumer — logs all domain events to NotificationLog |
 
+> **Planned, not implemented:** Course Service (:3002) and Reporting Service (:3008) are part of the original 8-service design (see `deliverable-docs/1. Architecture Design Document.docx` §4.3 / §4.8) but have no code under `services/` and no entry in `docker-compose.yml`. They do not start with the commands below.
+
 ---
 
 ## Technology Stack
@@ -65,7 +67,7 @@ The system is decomposed into 6 independently deployable services, each owning i
 | Auth | JWT (jsonwebtoken) + bcrypt | Stateless authentication with role claims embedded in token |
 | File upload | Multer | Profile photo upload with Docker-volume persistence |
 | Frontend | jQuery + Bootstrap 5 | No build tools — served as static files via nginx |
-| Container | Docker + docker-compose | Reproducible single-command startup for all 8 containers |
+| Container | Docker + docker-compose | Reproducible single-command startup for all 9 containers |
 
 ---
 
@@ -138,38 +140,72 @@ Grade mapping:
 
 ---
 
-## Getting Started
+## Deployment
 
 ### Prerequisites
-- Docker Desktop
-- Git
 
-### Run the project
+| Requirement | Notes |
+|---|---|
+| Docker Desktop 4.x+ (or Docker Engine + Compose v2) | `docker compose` (space, not hyphen) — the v2 CLI plugin syntax used throughout this guide |
+| Git | To clone the repository |
+| ~4 GB free RAM, ~2 GB free disk | For 9 containers (MongoDB, Kafka, 6 services, nginx) plus their images |
+| Free host ports | `8080`, `27017`, `9092`, `9094`, `3001`, `3003`, `3004`, `3005`, `3006`, `3007` — stop anything else already bound to these before starting |
+
+### 1. Clone and configure
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/nipunadeesarakarunatilleke/university-erp.git
 cd university-erp
 
-# 2. Set environment variables
 cp .env.example .env
-# Edit .env and set: JWT_SECRET=any-long-secret-string
+# Edit .env and set JWT_SECRET to a long random string, e.g.:
+#   JWT_SECRET=$(openssl rand -hex 32)
+```
 
-# 3. Start all 8 containers
+`.env` is gitignored — only `.env.example` is committed. `JWT_SECRET` is the one secret every service shares to independently verify tokens (see Architecture Design Document §9); there is no vault or secret manager in this local setup.
+
+### 2. Start the stack
+
+```bash
+# Build all service images and start all 9 containers in the background
 docker compose up --build -d
+```
 
-# 4. Seed demo users
+First run pulls `mongo:7`, `apache/kafka:3.7.0`, and `nginx:alpine`, then builds the 6 `node:20-alpine`-based service images — expect a few minutes on a cold cache. Subsequent runs are fast (Docker layer cache), and plain `docker compose up -d` (no `--build`) is enough unless service source code changed.
+
+### 3. Verify the deployment
+
+```bash
+# All 9 containers should show "Up" (mongodb/kafka also show "healthy")
+docker compose ps
+
+# Each built service exposes GET /health
+for port in 3001 3003 3004 3005 3006 3007; do
+  echo -n "Port $port: "
+  curl -sf http://localhost:$port/health || echo "NOT READY"
+  echo
+done
+```
+
+Kafka takes ~15–30 seconds after container start to pass its healthcheck; services that depend only on MongoDB (`depends_on: service_healthy`) come up faster and will log Kafka connection retries until the broker is ready — this is expected, not an error (fail-silent producer pattern, see Benefits & Risks §3.3).
+
+### 4. Seed demo data and get a token
+
+```bash
 curl -X POST http://localhost:3007/api/auth/seed
 
-# 5. Get a JWT token
 curl -s -X POST http://localhost:3007/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"admin","password":"admin123"}' | python3 -m json.tool
-
-# 6. Open the frontend
-open http://localhost:8080
-# Paste the token → Save → start exploring
 ```
+
+### 5. Open the app
+
+```bash
+open http://localhost:8080   # macOS; use xdg-open on Linux or just browse manually
+```
+
+Paste the JWT from step 4 into the token field → **Save** → start exploring. The frontend calls each service directly on its published port (`http://localhost:3001`, `:3003`, …) — there is currently no API gateway in front of them; see Service Communication Diagram §3.2 for why.
 
 ### Demo Users
 
@@ -181,23 +217,65 @@ open http://localhost:8080
 | lecturer | lecturer123 | LECTURER |
 | student1 | student123 | STUDENT |
 
+### Day-to-day operations
+
+```bash
+# Tail logs for one service (or omit the name to tail everything)
+docker compose logs -f notification-service
+
+# Rebuild and restart just one service after editing its code
+docker compose up -d --build student-service
+
+# Stop everything, keep data volumes
+docker compose stop
+
+# Stop and remove containers (data volumes survive — mongo-data, kafka-data, uploads-data)
+docker compose down
+
+# Full reset — also wipes MongoDB data, Kafka topics/messages, and uploaded photos
+docker compose down -v
+```
+
+### Troubleshooting
+
+| Symptom | Likely cause / fix |
+|---|---|
+| A service exits immediately | Check `docker compose logs <service>` — usually `MONGO_URI` unreachable because `mongodb` isn't healthy yet; `depends_on: service_healthy` should prevent this, but a first-run pull can still race on slow connections. Re-run `docker compose up -d`. |
+| `bind: address already in use` on startup | Another process already holds one of the ports listed under Prerequisites. Stop it, or change the host-side port mapping in `docker-compose.yml`. |
+| Kafka events never reach Notification Service | Check `docker compose logs kafka` for healthcheck status, and `docker compose logs notification-service` for `UNKNOWN_TOPIC_OR_PARTITION` retries — these stop once a producer's first publish auto-creates the topic. |
+| Frontend loads but API calls fail (CORS / connection refused) | Confirm the specific service's container is `Up` and its port is published (`docker compose ps`) — the frontend talks to `localhost:<port>` directly, so a single down service breaks only its own tab, not the whole app. |
+| `.env` changes not taking effect | `docker compose` only re-reads `.env` on container recreation — run `docker compose up -d --force-recreate`. |
+
+### Production notes
+
+This Compose setup is for local development/demo only. Section 11 of `deliverable-docs/1. Architecture Design Document.docx` lists what a real deployment still needs: MongoDB Atlas (or another managed multi-database cluster) instead of a single `mongo:7` container, a secrets vault instead of a shared `.env` `JWT_SECRET`, an actual API gateway in front of the services (NGINX currently only serves static files — see Service Communication Diagram §3.2/§3.6), and automated tests (none exist in the repository today).
+
 ---
 
 ## Project Structure
 
 ```
 university-erp/
-├── deliverable-docs/               # Assignment deliverables (D1–D9)
-│   ├── Architecture Design Document.docx
-│   ├── Service Identification Table.docx
-│   ├── Bounded Context Diagram.docx / .md
-│   ├── API Endpoint Design.docx
-│   ├── Service Communication Diagram.docx / .md
-│   ├── Benefits and Risks.docx
-│   └── AI Usage Report.docx
-├── supportive-docs/                # Background research & tracking
+├── deliverable-docs/                       # 7 numbered assignment deliverables
+│   ├── 1. Architecture Design Document.docx    (incl. Database Strategy as §6)
+│   ├── 2. Service Identification Table.docx
+│   ├── 3. Bounded Context Diagram.docx
+│   ├── 4. API Endpoint Design.docx
+│   ├── 5. Service Communication Diagram.docx
+│   ├── 6. Benefits and Risks.docx
+│   ├── 7. AI Usage Report.docx
+│   ├── docs/                                   # PDF export of each numbered deliverable
+│   └── Extra/                                  # Diagram sources + compiled copy
+│       ├── architecture-diagram.html / .drawio
+│       ├── Bounded Context Diagram.md              (Mermaid source)
+│       ├── Service Communication Diagram.md        (Mermaid source)
+│       └── Combined Deliverable Report.docx        (all 7 deliverables in one file)
+├── supportive-docs/                        # Background research & tracking
+│   ├── Microservice Architecture and Prototype - Group Assignment.pdf  (the brief)
 │   ├── Gap Analysis Report.docx
 │   ├── Individual Assignment Plan.docx
+│   ├── Evaluation Report.md                    (self-assessment vs. the brief's criteria)
+│   ├── Team questions.docx / answers.md
 │   ├── Information about existing system/
 │   └── PROGRESS.md
 ├── services/
@@ -207,28 +285,14 @@ university-erp/
 │   ├── result-service/
 │   ├── transcript-service/
 │   └── notification-service/
-├── frontend/                       # Static SPA (Bootstrap 5 + jQuery)
+├── frontend/                                # Static SPA (Bootstrap 5 + jQuery)
 │   ├── index.html
 │   ├── js/app.js
 │   ├── css/style.css
 │   └── nginx.conf
-├── docker-compose.yml              # All 8 containers
+├── docker-compose.yml                       # All 9 containers
 ├── .env.example
 └── .gitignore
-```
-
----
-
-## Service Health Check
-
-Once running, verify all services:
-
-```bash
-for port in 3001 3003 3004 3005 3006 3007; do
-  echo -n "Port $port: "
-  curl -sf http://localhost:$port/health
-  echo
-done
 ```
 
 ---
